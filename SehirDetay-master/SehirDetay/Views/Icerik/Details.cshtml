@@ -1,0 +1,107 @@
+﻿@model SehirDetay.Models.Icerik
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Icerik</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Baslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Detay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OlusturulmaTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OlusturulmaTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuncellenmeTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuncellenmeTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnahtarKelimeler)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnahtarKelimeler)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aktif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aktif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Konum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Konum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ilce.IlceAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ilce.IlceAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategori.KategoriAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategori.KategoriAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kullanici.Eposta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kullanici.Eposta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sehir.SehirAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sehir.SehirAd)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

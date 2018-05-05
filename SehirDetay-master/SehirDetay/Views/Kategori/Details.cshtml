@@ -1,0 +1,59 @@
+﻿@model SehirDetay.Models.Kategori
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Yonetici.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kategori</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KategoriAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UstKategoriId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UstKategoriId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lft)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lft)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rgt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rgt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aktif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aktif)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

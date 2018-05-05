@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+@{
+
+    if (Session["mesaj"] != null)
+    {
+        var mesaj = (SehirDetay.Helpers.Mesaj)Session["mesaj"];
+
+        <h2>@mesaj.Baslik</h2>
+
+        switch (mesaj.HataSeviyesi)
+        {
+            case SehirDetay.Helpers.HataSeviyesi.BuyukHata:
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Büyük Hata:</span>
+                     @mesaj.Aciklama
+                </div>
+
+
+                break;
+            case SehirDetay.Helpers.HataSeviyesi.Kritik:
+                <div class="alert alert-warning" role="alert">
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Kritik Hata:</span>
+                    @mesaj.Aciklama
+                </div>
+                break;
+            case SehirDetay.Helpers.HataSeviyesi.Bilgi:
+                <div class="alert alert-info" role="alert">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Bilgi:</span>
+                    @mesaj.Aciklama
+                </div>
+                break;
+            default:
+                <div class="alert alert-success" role="alert">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    <span class="sr-only">Mesaj:</span>
+                    @mesaj.Aciklama
+                </div>
+                break;
+        }
+
+
+        if (mesaj.Link != "")
+        {
+            <a href="@mesaj.Link">Çözümlemek için tıklayınız</a>
+        }
+
+        Session["mesaj"] = null;
+    }
+
+
+}
+
+
+

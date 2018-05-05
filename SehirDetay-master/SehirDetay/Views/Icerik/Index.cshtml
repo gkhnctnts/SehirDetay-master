@@ -1,0 +1,94 @@
+﻿@model IEnumerable<SehirDetay.Models.Icerik>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Baslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OlusturulmaTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuncellenmeTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnahtarKelimeler)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aktif)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Konum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ilce.IlceAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kategori.KategoriAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kullanici.Eposta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sehir.SehirAd)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Baslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OlusturulmaTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuncellenmeTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnahtarKelimeler)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aktif)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Konum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ilce.IlceAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kategori.KategoriAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kullanici.Eposta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sehir.SehirAd)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

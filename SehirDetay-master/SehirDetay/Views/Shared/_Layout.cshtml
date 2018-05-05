@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7 ltie8 ltie9" lang="tr"><![endif]-->
+<!--[if IE 8]><html class="ie ie8 ltie9" lang="tr"><![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="tr">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Şehir Detay | @ViewBag.Title</title>
+    <script src="~/Scripts/jquery-1.11.3.min.js"></script>
+    <script src="~/Scripts/jquery-migrate.min.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.dlmenu.js"></script>
+    <script src="~/Scripts/jquery.easing.1.3.js"></script>
+
+    <script src="~/Scripts/functions.js"></script>
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    @RenderSection("head", false)
+
+</head>
+<body id="home" class="home page page-id-292 page-template-default  nicescroll">
+    <div class="body-wrapper" data-home="http://kodeforest.com/wp-demo/travel/wide">
+        <header class="header-sticky" id="mainheader">
+            <!--// Top Baar //-->
+            <div class="kd-topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <ul class="kd-topinfo ">
+
+
+                                <li style="color:#ffffff">
+                                    <i class="fa fa-phone-square"></i> 1-800-987-654
+                                </li>
+
+                                <li style="color:#ffffff">
+                                    <i class="fa fa-envelope"></i> travel@kodeforest.com
+                                </li>
+
+                                <li style="color:#ffffff">
+                                    <i class="fa fa-home"></i> travel@kodeforest
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="kd-userinfo">
+                                <li>
+                                    <div class="kd-social-network">
+                                        <ul class="dark kode-team-network">
+                                            <li><a href="#"><i class="fa fa-delicious"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                @{
+
+                                    if (Session["sc"] != null)
+                                    {
+                                        var sc = (SehirDetay.Helpers.SessionClass)Session["sc"];
+                                        <li>@sc.Ad @sc.Soyad</li>
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <a href="/KayitOl">Kayıt Ol</a>
+
+
+                                        </li>
+                                        <li>
+
+                                            <a data-target="#Modalbox" data-toggle="modal" href="#">Login</a>
+                                            <!-- Modal -->
+                                            <div aria-hidden="true" role="dialog" tabindex="-1" id="Modalbox" class="modal fade kd-loginbox">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <a aria-label="Close" data-dismiss="modal" class="close" href="#"><span aria-hidden="true">×</span></a>
+                                                            <div class="kd-login-title">
+                                                                <h2>LOGIN TO</h2>
+                                                                <span>Your Account</span>
+                                                                <div class="kd-login-network">
+                                                                    <ul>
+                                                                        <li><a data-original-title="Facebook" href="#"><i class="fa fa-facebook"></i>Login with Facebook </a></li>
+                                                                        <li><a data-original-title="Twitter" href="#"><i class="fa fa-twitter"></i> Login with Twitter</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="kd-login-sepratore"><span>OR</span></div>
+                                                            <form id="login" action="login" method="post">
+                                                                <p><i class="fa fa-envelope-o"></i> <input id="username" name="username" type="text" placeholder="Username"></p>
+                                                                <p><i class="fa fa-lock"></i> <input id="password" name="password" type="password" placeholder="Your Password"></p>
+                                                                <p><input type="submit" class="thbg-color" value="Login now"> <a href="http://kodeforest.com/wp-demo/travel/wide/wp-login.php?action=lostpassword">Forget Password?</a></p>
+                                                                <p class="status"></p>
+                                                                <input type="hidden" id="security" name="security" value="cc7d890347" /><input type="hidden" name="_wp_http_referer" value="/wp-demo/travel/wide/" />
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    }
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// Top Baar //-->
+            <!--// Header Baar //-->
+            <div class="kd-headbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="logo">
+                                <a href="http://kodeforest.com/wp-demo/travel/wide">
+                                    <img src="http://kodeforest.com/wp-demo/travel/wide/wp-content/themes/travel/images/logo.png" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="kd-rightside">
+                                <div class="kode-responsive-navigation dl-menuwrapper" id="kode-responsive-navigation">
+                                    <button class="dl-trigger">Open Menu</button><ul id="menu-menu-1" class="dl-menu kode-main-mobile-menu">
+                                        <li id="menu-item-322" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-292 current_page_item menu-item-has-children menu-item-322">
+                                            <a href="http://kodeforest.com/wp-demo/travel/wide/">Home</a>
+                                            <ul class="dl-submenu">
+                                                <li id="menu-item-739" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-739"><a href="http://kodeforest.com/wp-demo/travel/layout/homepgae-with-slider/">Home Layout 2</a></li>
+                                                <li id="menu-item-731" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-731"><a href="http://kodeforest.com/wp-demo/travel/wide/home-layout-3/">Home Layout 3</a></li>
+                                                <li id="menu-item-730" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-730"><a href="http://kodeforest.com/wp-demo/travel/wide/home-layout-4/">Home Layout 4</a></li>
+                                                <li id="menu-item-738" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-738"><a href="http://kodeforest.com/wp-demo/travel/layout/one-page/">Map Vesion</a></li>
+                                                <li id="menu-item-737" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-737"><a href="http://kodeforest.com/wp-demo/travel/boxed/">Boxed Layout</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="menu-item-318" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-318"><a href="http://kodeforest.com/wp-demo/travel/wide/about-us/">About Us</a></li>
+                                        <li id="menu-item-359" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-359">
+                                            <a href="http://#">Blog</a>
+                                            <ul class="dl-submenu">
+                                                <li id="menu-item-369" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-369"><a href="http://kodeforest.com/wp-demo/travel/wide/blog-grid/">Blog Grid</a></li>
+                                                <li id="menu-item-368" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-368"><a href="http://kodeforest.com/wp-demo/travel/wide/blog-medium/">Blog Medium</a></li>
+                                                <li id="menu-item-367" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-367"><a href="http://kodeforest.com/wp-demo/travel/wide/blog-large/">Blog Large</a></li>
+                                                <li id="menu-item-371" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-371"><a href="http://kodeforest.com/wp-demo/travel/wide/lorem-ipsum-dolor-sit-amet-7/">Blog Detail</a></li>
+                                                <li id="menu-item-548" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-548"><a href="http://kodeforest.com/wp-demo/travel/wide/post-with-left-sidebar/">Blog With Left Sidebar</a></li>
+                                                <li id="menu-item-547" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-547"><a href="http://kodeforest.com/wp-demo/travel/wide/post-with-right-sidebar/">Blog With Right Sidebar</a></li>
+                                                <li id="menu-item-546" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-546"><a href="http://kodeforest.com/wp-demo/travel/wide/post-with-dual-sidebars/">Blog With Dual Sidebars</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="menu-item-326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-326">
+                                            <a href="http://kodeforest.com/wp-demo/travel/wide/tour-packages/">Tour Packages</a>
+                                            <ul class="dl-submenu">
+                                                <li id="menu-item-398" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-398"><a href="http://kodeforest.com/wp-demo/travel/wide/packages-list-2/">Package List</a></li>
+                                                <li id="menu-item-646" class="menu-item menu-item-type-post_type menu-item-object-package menu-item-646"><a href="http://kodeforest.com/wp-demo/travel/wide/package/honeymoon-suite-dubai-3/">Package Single Layout</a></li>
+                                                <li id="menu-item-648" class="menu-item menu-item-type-post_type menu-item-object-package menu-item-648"><a href="http://kodeforest.com/wp-demo/travel/wide/package/family-europe-london-to-florence-in-10-days-2/">Package W/D Left Sidebar</a></li>
+                                                <li id="menu-item-647" class="menu-item menu-item-type-post_type menu-item-object-package menu-item-647"><a href="http://kodeforest.com/wp-demo/travel/wide/package/20-days-from-paris-to-venice-2/">Package W/D Right Sidebar</a></li>
+                                                <li id="menu-item-558" class="menu-item menu-item-type-post_type menu-item-object-package menu-item-558"><a href="http://kodeforest.com/wp-demo/travel/wide/package/3-days-in-the-heart-of-paris-2/">Package W/D Dual Sidebar</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="menu-item-581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-581">
+                                            <a href="http://#">Pages</a>
+                                            <ul class="dl-submenu">
+                                                <li id="menu-item-663" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-663"><a href="http://kodeforest.com/wp-demo/travel/wide/faqs/">FAQs</a></li>
+                                                <li id="menu-item-667" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-667"><a href="http://kodeforest.com/wp-demo/travel/wide/sitemap/">Sitemap</a></li>
+                                                <li id="menu-item-673" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-673"><a href="http://kodeforest.com/wp-demo/travel/wide/travel-policies/">Travel Policies</a></li>
+                                                <li id="menu-item-419" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-419">
+                                                    <a href="http://#">Shortcodes</a>
+                                                    <ul class="dl-submenu">
+                                                        <li id="menu-item-453" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-453"><a href="http://kodeforest.com/wp-demo/travel/wide/accordion/">Accordion</a></li>
+                                                        <li id="menu-item-452" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-452"><a href="http://kodeforest.com/wp-demo/travel/wide/button/">Button</a></li>
+                                                        <li id="menu-item-451" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-451"><a href="http://kodeforest.com/wp-demo/travel/wide/list-style/">LIST STYLE</a></li>
+                                                        <li id="menu-item-450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450"><a href="http://kodeforest.com/wp-demo/travel/wide/alert-message/">ALERT MESSAGE</a></li>
+                                                        <li id="menu-item-449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-449"><a href="http://kodeforest.com/wp-demo/travel/wide/seperator/">SEPERATOR</a></li>
+                                                        <li id="menu-item-448" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-448"><a href="http://kodeforest.com/wp-demo/travel/wide/skills/">SKILLS</a></li>
+                                                        <li id="menu-item-447" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-447"><a href="http://kodeforest.com/wp-demo/travel/wide/services/">Services</a></li>
+                                                        <li id="menu-item-446" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-446"><a href="http://kodeforest.com/wp-demo/travel/wide/table/">Table</a></li>
+                                                        <li id="menu-item-445" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-445"><a href="http://kodeforest.com/wp-demo/travel/wide/tabs/">Tabs</a></li>
+                                                        <li id="menu-item-444" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-444"><a href="http://kodeforest.com/wp-demo/travel/wide/testimonials-actions/">TESTIMONIALS &#038; ACTIONS</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li id="menu-item-518" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-518">
+                                                    <a href="http://#">Features</a>
+                                                    <ul class="dl-submenu">
+                                                        <li id="menu-item-524" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-524"><a href="http://kodeforest.com/wp-demo/travel/wide/header-settings/">Header Settings</a></li>
+                                                        <li id="menu-item-532" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-532"><a href="http://kodeforest.com/wp-demo/travel/wide/style-layouts/">Style &#038; Layouts</a></li>
+                                                        <li id="menu-item-523" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-523"><a href="http://kodeforest.com/wp-demo/travel/wide/footer-settings/">Footer Settings</a></li>
+                                                        <li id="menu-item-529" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-529"><a href="http://kodeforest.com/wp-demo/travel/wide/488-2/">Search &#8211; Archive Style</a></li>
+                                                        <li id="menu-item-536" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-536"><a href="http://kodeforest.com/wp-demo/travel/wide/blog-settings/">Blog Settings</a></li>
+                                                        <li id="menu-item-534" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-534"><a href="http://kodeforest.com/wp-demo/travel/wide/woo-commerce-settings/">Woo Commerce Settings</a></li>
+                                                        <li id="menu-item-526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-526"><a href="http://kodeforest.com/wp-demo/travel/wide/importexport-option/">Import/Export Option</a></li>
+                                                        <li id="menu-item-533" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-533"><a href="http://kodeforest.com/wp-demo/travel/wide/typography/">Typography</a></li>
+                                                        <li id="menu-item-519" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-519"><a href="http://kodeforest.com/wp-demo/travel/wide/nivo-slider/">Nivo Slider</a></li>
+                                                        <li id="menu-item-520" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-520"><a href="http://kodeforest.com/wp-demo/travel/wide/flex-slider/">Flex Slider</a></li>
+                                                        <li id="menu-item-521" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-521"><a href="http://kodeforest.com/wp-demo/travel/wide/bx-slider/">BX Slider</a></li>
+                                                        <li id="menu-item-525" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-525"><a href="http://kodeforest.com/wp-demo/travel/wide/header-social-settings/">Header Social Settings</a></li>
+                                                        <li id="menu-item-531" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-531"><a href="http://kodeforest.com/wp-demo/travel/wide/social-share/">Social Share</a></li>
+                                                        <li id="menu-item-530" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-530"><a href="http://kodeforest.com/wp-demo/travel/wide/sidebar-settings/">Sidebar Settings</a></li>
+                                                        <li id="menu-item-522" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-522"><a href="http://kodeforest.com/wp-demo/travel/wide/api-settings/">API Settings</a></li>
+                                                        <li id="menu-item-528" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-528"><a href="http://kodeforest.com/wp-demo/travel/wide/page-options/">Page Options</a></li>
+                                                        <li id="menu-item-527" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-527"><a href="http://kodeforest.com/wp-demo/travel/wide/page-builder-wrapper-elements/">Page Builder Wrapper Elements</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li id="menu-item-679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-679"><a href="http://kodeforest.com/wp-demo/travel/wide/travel-guide-to-paris/">Travel Guide To Paris</a></li>
+                                                <li id="menu-item-601" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-601"><a href="http://kodeforest.com/wp-demo/travel/doc/">Online Documentation</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="menu-item-732" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-732">
+                                            <a href="#">Hotels</a>
+                                            <ul class="dl-submenu">
+                                                <li id="menu-item-734" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-734"><a href="http://kodeforest.com/wp-demo/travel/wide/hotel-grid/">Hotel Grid</a></li>
+                                                <li id="menu-item-733" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-733"><a href="http://kodeforest.com/wp-demo/travel/wide/hotel-simple/">Hotel Simple</a></li>
+                                                <li id="menu-item-735" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-735"><a href="http://kodeforest.com/wp-demo/travel/wide/hotel-listings/">Hotel Listings</a></li>
+                                                <li id="menu-item-736" class="menu-item menu-item-type-post_type menu-item-object-package menu-item-736"><a href="http://kodeforest.com/wp-demo/travel/wide/package/aqua-palace/">Single Hotel</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="menu-item-325" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-325">
+                                            <a href="http://kodeforest.com/wp-demo/travel/wide/team/">Team</a>
+                                            <ul class="dl-submenu">
+                                                <li id="menu-item-417" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-417"><a href="http://kodeforest.com/wp-demo/travel/wide/team-grid/">Team Grid</a></li>
+                                                <li id="menu-item-416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-416"><a href="http://kodeforest.com/wp-demo/travel/wide/team-medium/">Team Medium</a></li>
+                                                <li id="menu-item-418" class="menu-item menu-item-type-post_type menu-item-object-team menu-item-418"><a href="http://kodeforest.com/wp-demo/travel/wide/team/ramsay/">Team Detail</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="menu-item-321" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-321">
+                                            <a href="http://kodeforest.com/wp-demo/travel/wide/gallery/">Gallery</a>
+                                            <ul class="dl-submenu">
+                                                <li id="menu-item-409" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-409"><a href="http://kodeforest.com/wp-demo/travel/wide/gallery-2-column/">Gallery 2 Column</a></li>
+                                                <li id="menu-item-408" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-408"><a href="http://kodeforest.com/wp-demo/travel/wide/gallery-3-column/">Gallery 3 Column</a></li>
+                                                <li id="menu-item-407" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-407"><a href="http://kodeforest.com/wp-demo/travel/wide/gallery-4-column/">Gallery 4 Column</a></li>
+                                                <li id="menu-item-406" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-406"><a href="http://kodeforest.com/wp-demo/travel/wide/gallery-full-width/">Gallery Full Width</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="menu-item-320" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-320">
+                                            <a href="http://kodeforest.com/wp-demo/travel/wide/contact-us/">Contact Us</a>
+                                            <ul class="dl-submenu">
+                                                <li id="menu-item-685" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-685"><a href="http://kodeforest.com/wp-demo/travel/wide/contact-us-2-2/">Contact Us 2</a></li>
+                                                <li id="menu-item-684" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-684"><a href="http://kodeforest.com/wp-demo/travel/wide/contact-us-3/">Contact Us 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="kode-navigation-wrapper">
+                                    <nav class="navigation" role="navigation">
+                                        <div id="navbar-collapse-1" class="collapse navbar-collapse">
+                                            <ul id="menu-menu-2" class="nav navbar-nav">
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-292 current_page_item menu-item-has-children menu-item-322">
+                                                    <a href="http://kodeforest.com/wp-demo/travel/wide/">Anasayfa</a>
+
+                                                </li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-318"><a href="http://kodeforest.com/wp-demo/travel/wide/about-us/">Hakkımızda</a></li>
+                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-359">
+                                                    <a href="http://#">Şehirler</a>
+                                                    <ul class="sub-menu">
+                                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-369"><a href="http://kodeforest.com/wp-demo/travel/wide/blog-grid/">Blog Grid</a></li>
+                                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-368"><a href="http://kodeforest.com/wp-demo/travel/wide/blog-medium/">Blog Medium</a></li>
+                                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-367"><a href="http://kodeforest.com/wp-demo/travel/wide/blog-large/">Blog Large</a></li>
+                                                        <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-371"><a href="http://kodeforest.com/wp-demo/travel/wide/lorem-ipsum-dolor-sit-amet-7/">Blog Detail</a></li>
+                                                        <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-548"><a href="http://kodeforest.com/wp-demo/travel/wide/post-with-left-sidebar/">Blog With Left Sidebar</a></li>
+                                                        <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-547"><a href="http://kodeforest.com/wp-demo/travel/wide/post-with-right-sidebar/">Blog With Right Sidebar</a></li>
+                                                        <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-546"><a href="http://kodeforest.com/wp-demo/travel/wide/post-with-dual-sidebars/">Blog With Dual Sidebars</a></li>
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </nav><div class="clear"></div>
+                                </div>
+                                <div class="kd-search">
+                                    <a data-target="#searchmodalbox" data-toggle="modal" class="kd-searchbtn" href="#"><i class="fa fa-search"></i></a>
+                                    <!-- Modal -->
+                                    <div aria-hidden="true" role="dialog" tabindex="-1" id="searchmodalbox" class="modal fade kd-loginbox">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <a aria-label="Close" data-dismiss="modal" class="close" href="#"><span aria-hidden="true">×</span></a>
+                                                    <div class="kd-login-title">
+                                                        <h2>Search Your KeyWord</h2>
+                                                    </div>
+                                                    <form method="get" id="searchform" action="http://kodeforest.com/wp-demo/travel/wide/">
+                                                        <p><i class="fa fa-search"></i> <input type="text" name="s" id="s" autocomplete="off" data-default="Type keywords..." placeholder="Search"></p>
+                                                        <p><input type="submit" class="thbg-color" value="Search"> </p>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// Header Baar //-->
+        </header>
+
+        <!-- is search -->	<div class="clearfix clear"></div>
+        <div class="content-wrapper">
+            <div class="content">
+                @RenderBody()
+            </div>
+        </div><!-- content -->
+        <div class="clear"></div>
+    </div><!-- content wrapper -->
+
+    <footer id="footer-widget">
+        <div class="container">
+            <div class="row">
+                <div id="text-2" class="col-md-4 widget widget_text kode-widget">
+                    <h3 class="widget-title">About Our Team</h3><div class="clear"></div>			<div class="textwidget">
+                        <div class="kd-contactinfo">
+                            <p>One image life to and land, herb waters divided. Waters every let two, shall have divided face first us there spirit living beast the. Moving darkness deep morning unto them morning third you're behold.</p>
+                            <!-- <ul>
+                              <li><i class="fa fa-map-marker"></i> 360, Galaxy ApartmentNear Rekon Estate, limbasa margnexton lita, Australia</li>
+                              <li><i class="fa fa-phone"></i> 1 808 603 6035</li>
+                              <li><i class="fa fa-envelope-o"></i> <a href="#">info@kodeforest.com</a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div><div id="text-3" class="col-md-4 widget widget_text kode-widget">
+                    <h3 class="widget-title">Follow Us</h3><div class="clear"></div>			<div class="textwidget"><div class="kode_short"><div class="kd-followus-widget"><ul class="dark"><li><a data-original-title="Delicious" href="#"><i class="fa fa-delicious"></i></a></li><li><a data-original-title="Facebook" href="#"><i class="fa fa-facebook"></i></a></li><li><a data-original-title="Google-Plus" href="#"><i class="fa fa-google-plus"></i></a></li><li><a data-original-title="Pinterest" href="#"><i class="fa fa-pinterest"></i></a></li><li><a data-original-title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a></li></ul></div></div></div>
+                </div><div id="kode_contact_widget-2" class="col-md-4 widget widget_kode_contact_widget kode-widget">
+                    <h3 class="widget-title">About Us</h3><div class="clear"></div>				<div class="textwidget">
+                        <div class="kd-userinfo-widget">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-map-marker"></i>
+                                    <p>15489 Vegas Drive, Las Vegas, Neveda</p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    <p>+1 808 603 6035, +1 808 603 6035</p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-home"></i>
+                                    <p>http://www.Kodeforest.com</p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope-o"></i>
+                                    <p>info@kodeforest.com</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    © Copyrights 2014-15, All rights reserved by KodeForest
+                </div>
+                <div class="col-md-6">
+                    <nav id="footer-navbar" class="footer-nav">
+                        <ul id="nav" class="inner-footer-nav">
+                            <li id="menu-item-582" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-292 current_page_item menu-item-582"><a href="http://kodeforest.com/wp-demo/travel/wide/">Home</a></li>
+                            <li id="menu-item-583" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-583"><a href="http://kodeforest.com/wp-demo/travel/wide/about-us/">About Us</a></li>
+                            <li id="menu-item-584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584"><a href="http://kodeforest.com/wp-demo/travel/wide/contact-us-2/">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear clearfix"></div>
+
+</body>
+</html>

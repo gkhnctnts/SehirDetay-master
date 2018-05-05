@@ -1,0 +1,1010 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SehirDetayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ayar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Anahtar" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Deger" Type="ntext" Nullable="false" />
+          <Property Name="Aciklama" Type="ntext" />
+        </EntityType>
+        <EntityType Name="Icerik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Detay" Type="ntext" Nullable="false" />
+          <Property Name="KategoriId" Type="int" Nullable="false" />
+          <Property Name="KullaniciId" Type="int" Nullable="false" />
+          <Property Name="OlusturulmaTarihi" Type="smalldatetime" Nullable="false" />
+          <Property Name="GuncellenmeTarihi" Type="smalldatetime" Nullable="false" />
+          <Property Name="AnahtarKelimeler" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Aktif" Type="bit" Nullable="false" />
+          <Property Name="Konum" Type="geography" />
+          <Property Name="SehirId" Type="int" Nullable="false" />
+          <Property Name="IlceId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IcerikMedya">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IcerikId" Type="bigint" Nullable="false" />
+          <Property Name="MedyaId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ilce">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IlceAd" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SehirId" Type="int" Nullable="false" />
+          <Property Name="Konum" Type="geography" />
+        </EntityType>
+        <EntityType Name="Kategori">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KategoriAd" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UstKategoriId" Type="int" Nullable="false" />
+          <Property Name="Lft" Type="int" Nullable="false" />
+          <Property Name="Rgt" Type="int" Nullable="false" />
+          <Property Name="Aktif" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Eposta" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cinsiyet" Type="bit" />
+          <Property Name="DogumTarihi" Type="date" />
+          <Property Name="CepTelefonu" Type="bigint" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SehirId" Type="int" />
+          <Property Name="IlceId" Type="int" />
+          <Property Name="Aktif" Type="bit" Nullable="false" />
+          <Property Name="AktivasyonKodu" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KullaniciRol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciId" Type="int" Nullable="false" />
+          <Property Name="RolId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medya">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="MedyaTipi" Type="int" Nullable="false" />
+          <Property Name="MedyaUrl" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EklemeTarihi" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RolAd" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sehir">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SehirAd" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Plaka" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="Konum" Type="geography" />
+        </EntityType>
+        <EntityType Name="Ulasim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UlasimTurId" Type="int" Nullable="false" />
+          <Property Name="IcerikId" Type="bigint" Nullable="false" />
+          <Property Name="Tarif" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Puan" Type="int" Nullable="false" />
+          <Property Name="OlusturulmaTarihi" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UlasimTur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UlasimTuru" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Yorum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IcerikId" Type="bigint" Nullable="false" />
+          <Property Name="KullaniciId" Type="int" Nullable="false" />
+          <Property Name="YorumMetni" Type="nvarchar" MaxLength="300" />
+          <Property Name="Puan" Type="int" Nullable="false" />
+          <Property Name="Konum" Type="geography" />
+          <Property Name="OlusturulmaTarihi" Type="smalldatetime" Nullable="false" />
+          <Property Name="GuncellenmeTarihi" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Icerik_Ilce">
+          <End Role="Ilce" Type="Self.Ilce" Multiplicity="1" />
+          <End Role="Icerik" Type="Self.Icerik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ilce">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Icerik">
+              <PropertyRef Name="IlceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Icerik_Kategori">
+          <End Role="Kategori" Type="Self.Kategori" Multiplicity="1" />
+          <End Role="Icerik" Type="Self.Icerik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategori">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Icerik">
+              <PropertyRef Name="KategoriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Icerik_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1" />
+          <End Role="Icerik" Type="Self.Icerik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Icerik">
+              <PropertyRef Name="KullaniciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Icerik_Sehir">
+          <End Role="Sehir" Type="Self.Sehir" Multiplicity="1" />
+          <End Role="Icerik" Type="Self.Icerik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sehir">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Icerik">
+              <PropertyRef Name="SehirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IcerikMedya_Icerik">
+          <End Role="Icerik" Type="Self.Icerik" Multiplicity="1" />
+          <End Role="IcerikMedya" Type="Self.IcerikMedya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Icerik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IcerikMedya">
+              <PropertyRef Name="IcerikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IcerikMedya_Medya">
+          <End Role="Medya" Type="Self.Medya" Multiplicity="1" />
+          <End Role="IcerikMedya" Type="Self.IcerikMedya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medya">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IcerikMedya">
+              <PropertyRef Name="MedyaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilce_Sehir">
+          <End Role="Sehir" Type="Self.Sehir" Multiplicity="1" />
+          <End Role="Ilce" Type="Self.Ilce" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sehir">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ilce">
+              <PropertyRef Name="SehirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kullanici_Ilce">
+          <End Role="Ilce" Type="Self.Ilce" Multiplicity="0..1" />
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ilce">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kullanici">
+              <PropertyRef Name="IlceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kullanici_Sehir">
+          <End Role="Sehir" Type="Self.Sehir" Multiplicity="0..1" />
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sehir">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kullanici">
+              <PropertyRef Name="SehirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KullaniciRol_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KullaniciRol" Type="Self.KullaniciRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="KullaniciRol">
+              <PropertyRef Name="KullaniciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KullaniciRol_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+          <End Role="KullaniciRol" Type="Self.KullaniciRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="KullaniciRol">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ulasim_Icerik">
+          <End Role="Icerik" Type="Self.Icerik" Multiplicity="1" />
+          <End Role="Ulasim" Type="Self.Ulasim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Icerik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ulasim">
+              <PropertyRef Name="IcerikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ulasim_UlasimTur">
+          <End Role="UlasimTur" Type="Self.UlasimTur" Multiplicity="1" />
+          <End Role="Ulasim" Type="Self.Ulasim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UlasimTur">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ulasim">
+              <PropertyRef Name="UlasimTurId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yorum_Icerik">
+          <End Role="Icerik" Type="Self.Icerik" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Yorum" Type="Self.Yorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Icerik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Yorum">
+              <PropertyRef Name="IcerikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yorum_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1" />
+          <End Role="Yorum" Type="Self.Yorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Yorum">
+              <PropertyRef Name="KullaniciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SehirDetayModelStoreContainer">
+          <EntitySet Name="Ayar" EntityType="Self.Ayar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Icerik" EntityType="Self.Icerik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IcerikMedya" EntityType="Self.IcerikMedya" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ilce" EntityType="Self.Ilce" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kategori" EntityType="Self.Kategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KullaniciRol" EntityType="Self.KullaniciRol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medya" EntityType="Self.Medya" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sehir" EntityType="Self.Sehir" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ulasim" EntityType="Self.Ulasim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UlasimTur" EntityType="Self.UlasimTur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Yorum" EntityType="Self.Yorum" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Icerik_Ilce" Association="Self.FK_Icerik_Ilce">
+            <End Role="Ilce" EntitySet="Ilce" />
+            <End Role="Icerik" EntitySet="Icerik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Icerik_Kategori" Association="Self.FK_Icerik_Kategori">
+            <End Role="Kategori" EntitySet="Kategori" />
+            <End Role="Icerik" EntitySet="Icerik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Icerik_Kullanici" Association="Self.FK_Icerik_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Icerik" EntitySet="Icerik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Icerik_Sehir" Association="Self.FK_Icerik_Sehir">
+            <End Role="Sehir" EntitySet="Sehir" />
+            <End Role="Icerik" EntitySet="Icerik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IcerikMedya_Icerik" Association="Self.FK_IcerikMedya_Icerik">
+            <End Role="Icerik" EntitySet="Icerik" />
+            <End Role="IcerikMedya" EntitySet="IcerikMedya" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IcerikMedya_Medya" Association="Self.FK_IcerikMedya_Medya">
+            <End Role="Medya" EntitySet="Medya" />
+            <End Role="IcerikMedya" EntitySet="IcerikMedya" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilce_Sehir" Association="Self.FK_Ilce_Sehir">
+            <End Role="Sehir" EntitySet="Sehir" />
+            <End Role="Ilce" EntitySet="Ilce" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kullanici_Ilce" Association="Self.FK_Kullanici_Ilce">
+            <End Role="Ilce" EntitySet="Ilce" />
+            <End Role="Kullanici" EntitySet="Kullanici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kullanici_Sehir" Association="Self.FK_Kullanici_Sehir">
+            <End Role="Sehir" EntitySet="Sehir" />
+            <End Role="Kullanici" EntitySet="Kullanici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KullaniciRol_Kullanici" Association="Self.FK_KullaniciRol_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="KullaniciRol" EntitySet="KullaniciRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KullaniciRol_Rol" Association="Self.FK_KullaniciRol_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="KullaniciRol" EntitySet="KullaniciRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ulasim_Icerik" Association="Self.FK_Ulasim_Icerik">
+            <End Role="Icerik" EntitySet="Icerik" />
+            <End Role="Ulasim" EntitySet="Ulasim" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ulasim_UlasimTur" Association="Self.FK_Ulasim_UlasimTur">
+            <End Role="UlasimTur" EntitySet="UlasimTur" />
+            <End Role="Ulasim" EntitySet="Ulasim" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yorum_Icerik" Association="Self.FK_Yorum_Icerik">
+            <End Role="Icerik" EntitySet="Icerik" />
+            <End Role="Yorum" EntitySet="Yorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yorum_Kullanici" Association="Self.FK_Yorum_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Yorum" EntitySet="Yorum" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SehirDetayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ayar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Anahtar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Deger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Icerik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Detay" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KategoriId" Type="Int32" Nullable="false" />
+          <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+          <Property Name="OlusturulmaTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="GuncellenmeTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="AnahtarKelimeler" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Aktif" Type="Boolean" Nullable="false" />
+          <Property Name="Konum" Type="Geography" />
+          <Property Name="SehirId" Type="Int32" Nullable="false" />
+          <Property Name="IlceId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ilce" Relationship="Self.FK_Icerik_Ilce" FromRole="Icerik" ToRole="Ilce" />
+          <NavigationProperty Name="Kategori" Relationship="Self.FK_Icerik_Kategori" FromRole="Icerik" ToRole="Kategori" />
+          <NavigationProperty Name="Kullanici" Relationship="Self.FK_Icerik_Kullanici" FromRole="Icerik" ToRole="Kullanici" />
+          <NavigationProperty Name="Sehir" Relationship="Self.FK_Icerik_Sehir" FromRole="Icerik" ToRole="Sehir" />
+          <NavigationProperty Name="Ulasim" Relationship="Self.FK_Ulasim_Icerik" FromRole="Icerik" ToRole="Ulasim" />
+          <NavigationProperty Name="Yorum" Relationship="Self.FK_Yorum_Icerik" FromRole="Icerik" ToRole="Yorum" />
+          <NavigationProperty Name="IcerikMedya" Relationship="SehirDetayModel.FK_IcerikMedya_Icerik" FromRole="Icerik" ToRole="IcerikMedya" />
+        </EntityType>
+        <EntityType Name="Ilce">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IlceAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SehirId" Type="Int32" Nullable="false" />
+          <Property Name="Konum" Type="Geography" />
+          <NavigationProperty Name="Icerik" Relationship="Self.FK_Icerik_Ilce" FromRole="Ilce" ToRole="Icerik" />
+          <NavigationProperty Name="Sehir" Relationship="Self.FK_Ilce_Sehir" FromRole="Ilce" ToRole="Sehir" />
+          <NavigationProperty Name="Kullanici" Relationship="Self.FK_Kullanici_Ilce" FromRole="Ilce" ToRole="Kullanici" />
+        </EntityType>
+        <EntityType Name="Kategori">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="KategoriAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UstKategoriId" Type="Int32" Nullable="false" />
+          <Property Name="Lft" Type="Int32" Nullable="false" />
+          <Property Name="Rgt" Type="Int32" Nullable="false" />
+          <Property Name="Aktif" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Icerik" Relationship="Self.FK_Icerik_Kategori" FromRole="Kategori" ToRole="Icerik" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Eposta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cinsiyet" Type="Boolean" />
+          <Property Name="DogumTarihi" Type="DateTime" Precision="0" />
+          <Property Name="CepTelefonu" Type="Int64" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SehirId" Type="Int32" />
+          <Property Name="IlceId" Type="Int32" />
+          <Property Name="Aktif" Type="Boolean" Nullable="false" />
+          <Property Name="AktivasyonKodu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Icerik" Relationship="Self.FK_Icerik_Kullanici" FromRole="Kullanici" ToRole="Icerik" />
+          <NavigationProperty Name="Ilce" Relationship="Self.FK_Kullanici_Ilce" FromRole="Kullanici" ToRole="Ilce" />
+          <NavigationProperty Name="Sehir" Relationship="Self.FK_Kullanici_Sehir" FromRole="Kullanici" ToRole="Sehir" />
+          <NavigationProperty Name="KullaniciRol" Relationship="Self.FK_KullaniciRol_Kullanici" FromRole="Kullanici" ToRole="KullaniciRol" />
+          <NavigationProperty Name="Yorum" Relationship="Self.FK_Yorum_Kullanici" FromRole="Kullanici" ToRole="Yorum" />
+        </EntityType>
+        <EntityType Name="KullaniciRol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+          <Property Name="RolId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Kullanici" Relationship="Self.FK_KullaniciRol_Kullanici" FromRole="KullaniciRol" ToRole="Kullanici" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK_KullaniciRol_Rol" FromRole="KullaniciRol" ToRole="Rol" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RolAd" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="KullaniciRol" Relationship="Self.FK_KullaniciRol_Rol" FromRole="Rol" ToRole="KullaniciRol" />
+        </EntityType>
+        <EntityType Name="Sehir">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SehirAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Plaka" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Konum" Type="Geography" />
+          <NavigationProperty Name="Icerik" Relationship="Self.FK_Icerik_Sehir" FromRole="Sehir" ToRole="Icerik" />
+          <NavigationProperty Name="Ilce" Relationship="Self.FK_Ilce_Sehir" FromRole="Sehir" ToRole="Ilce" />
+          <NavigationProperty Name="Kullanici" Relationship="Self.FK_Kullanici_Sehir" FromRole="Sehir" ToRole="Kullanici" />
+        </EntityType>
+        <EntityType Name="Ulasim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UlasimTurId" Type="Int32" Nullable="false" />
+          <Property Name="IcerikId" Type="Int64" Nullable="false" />
+          <Property Name="Tarif" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Puan" Type="Int32" Nullable="false" />
+          <Property Name="OlusturulmaTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Icerik" Relationship="Self.FK_Ulasim_Icerik" FromRole="Ulasim" ToRole="Icerik" />
+          <NavigationProperty Name="UlasimTur" Relationship="Self.FK_Ulasim_UlasimTur" FromRole="Ulasim" ToRole="UlasimTur" />
+        </EntityType>
+        <EntityType Name="UlasimTur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UlasimTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Ulasim" Relationship="Self.FK_Ulasim_UlasimTur" FromRole="UlasimTur" ToRole="Ulasim" />
+        </EntityType>
+        <EntityType Name="Yorum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IcerikId" Type="Int64" Nullable="false" />
+          <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+          <Property Name="YorumMetni" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Puan" Type="Int32" Nullable="false" />
+          <Property Name="Konum" Type="Geography" />
+          <Property Name="OlusturulmaTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="GuncellenmeTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Icerik" Relationship="Self.FK_Yorum_Icerik" FromRole="Yorum" ToRole="Icerik" />
+          <NavigationProperty Name="Kullanici" Relationship="Self.FK_Yorum_Kullanici" FromRole="Yorum" ToRole="Kullanici" />
+        </EntityType>
+        <Association Name="FK_Icerik_Ilce">
+          <End Role="Ilce" Type="Self.Ilce" Multiplicity="1" />
+          <End Role="Icerik" Type="Self.Icerik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ilce">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Icerik">
+              <PropertyRef Name="IlceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Icerik_Kategori">
+          <End Role="Kategori" Type="Self.Kategori" Multiplicity="1" />
+          <End Role="Icerik" Type="Self.Icerik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategori">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Icerik">
+              <PropertyRef Name="KategoriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Icerik_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1" />
+          <End Role="Icerik" Type="Self.Icerik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Icerik">
+              <PropertyRef Name="KullaniciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Icerik_Sehir">
+          <End Role="Sehir" Type="Self.Sehir" Multiplicity="1" />
+          <End Role="Icerik" Type="Self.Icerik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sehir">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Icerik">
+              <PropertyRef Name="SehirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ulasim_Icerik">
+          <End Role="Icerik" Type="Self.Icerik" Multiplicity="1" />
+          <End Role="Ulasim" Type="Self.Ulasim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Icerik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ulasim">
+              <PropertyRef Name="IcerikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yorum_Icerik">
+          <End Role="Icerik" Type="Self.Icerik" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Yorum" Type="Self.Yorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Icerik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Yorum">
+              <PropertyRef Name="IcerikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilce_Sehir">
+          <End Role="Sehir" Type="Self.Sehir" Multiplicity="1" />
+          <End Role="Ilce" Type="Self.Ilce" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sehir">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ilce">
+              <PropertyRef Name="SehirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kullanici_Ilce">
+          <End Role="Ilce" Type="Self.Ilce" Multiplicity="0..1" />
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ilce">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kullanici">
+              <PropertyRef Name="IlceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kullanici_Sehir">
+          <End Role="Sehir" Type="Self.Sehir" Multiplicity="0..1" />
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sehir">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kullanici">
+              <PropertyRef Name="SehirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KullaniciRol_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KullaniciRol" Type="Self.KullaniciRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="KullaniciRol">
+              <PropertyRef Name="KullaniciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yorum_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1" />
+          <End Role="Yorum" Type="Self.Yorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Yorum">
+              <PropertyRef Name="KullaniciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KullaniciRol_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+          <End Role="KullaniciRol" Type="Self.KullaniciRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="KullaniciRol">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ulasim_UlasimTur">
+          <End Role="UlasimTur" Type="Self.UlasimTur" Multiplicity="1" />
+          <End Role="Ulasim" Type="Self.Ulasim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UlasimTur">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ulasim">
+              <PropertyRef Name="UlasimTurId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SehirDetayEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ayar" EntityType="Self.Ayar" />
+          <EntitySet Name="Icerik" EntityType="Self.Icerik" />
+          <EntitySet Name="Ilce" EntityType="Self.Ilce" />
+          <EntitySet Name="Kategori" EntityType="Self.Kategori" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+          <EntitySet Name="KullaniciRol" EntityType="Self.KullaniciRol" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" />
+          <EntitySet Name="Sehir" EntityType="Self.Sehir" />
+          <EntitySet Name="Ulasim" EntityType="Self.Ulasim" />
+          <EntitySet Name="UlasimTur" EntityType="Self.UlasimTur" />
+          <EntitySet Name="Yorum" EntityType="Self.Yorum" />
+          <AssociationSet Name="FK_Icerik_Ilce" Association="Self.FK_Icerik_Ilce">
+            <End Role="Ilce" EntitySet="Ilce" />
+            <End Role="Icerik" EntitySet="Icerik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Icerik_Kategori" Association="Self.FK_Icerik_Kategori">
+            <End Role="Kategori" EntitySet="Kategori" />
+            <End Role="Icerik" EntitySet="Icerik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Icerik_Kullanici" Association="Self.FK_Icerik_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Icerik" EntitySet="Icerik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Icerik_Sehir" Association="Self.FK_Icerik_Sehir">
+            <End Role="Sehir" EntitySet="Sehir" />
+            <End Role="Icerik" EntitySet="Icerik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ulasim_Icerik" Association="Self.FK_Ulasim_Icerik">
+            <End Role="Icerik" EntitySet="Icerik" />
+            <End Role="Ulasim" EntitySet="Ulasim" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yorum_Icerik" Association="Self.FK_Yorum_Icerik">
+            <End Role="Icerik" EntitySet="Icerik" />
+            <End Role="Yorum" EntitySet="Yorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilce_Sehir" Association="Self.FK_Ilce_Sehir">
+            <End Role="Sehir" EntitySet="Sehir" />
+            <End Role="Ilce" EntitySet="Ilce" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kullanici_Ilce" Association="Self.FK_Kullanici_Ilce">
+            <End Role="Ilce" EntitySet="Ilce" />
+            <End Role="Kullanici" EntitySet="Kullanici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kullanici_Sehir" Association="Self.FK_Kullanici_Sehir">
+            <End Role="Sehir" EntitySet="Sehir" />
+            <End Role="Kullanici" EntitySet="Kullanici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KullaniciRol_Kullanici" Association="Self.FK_KullaniciRol_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="KullaniciRol" EntitySet="KullaniciRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yorum_Kullanici" Association="Self.FK_Yorum_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Yorum" EntitySet="Yorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KullaniciRol_Rol" Association="Self.FK_KullaniciRol_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="KullaniciRol" EntitySet="KullaniciRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ulasim_UlasimTur" Association="Self.FK_Ulasim_UlasimTur">
+            <End Role="UlasimTur" EntitySet="UlasimTur" />
+            <End Role="Ulasim" EntitySet="Ulasim" />
+          </AssociationSet>
+          <EntitySet Name="IcerikMedya" EntityType="SehirDetayModel.IcerikMedya" />
+          <EntitySet Name="Medya" EntityType="SehirDetayModel.Medya" />
+          <AssociationSet Name="FK_IcerikMedya_Icerik" Association="SehirDetayModel.FK_IcerikMedya_Icerik">
+            <End Role="Icerik" EntitySet="Icerik" />
+            <End Role="IcerikMedya" EntitySet="IcerikMedya" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IcerikMedya_Medya" Association="SehirDetayModel.FK_IcerikMedya_Medya">
+            <End Role="Medya" EntitySet="Medya" />
+            <End Role="IcerikMedya" EntitySet="IcerikMedya" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="IcerikMedya">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IcerikId" Type="Int64" Nullable="false" />
+          <Property Name="MedyaId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Icerik" Relationship="SehirDetayModel.FK_IcerikMedya_Icerik" FromRole="IcerikMedya" ToRole="Icerik" />
+          <NavigationProperty Name="Medya" Relationship="SehirDetayModel.FK_IcerikMedya_Medya" FromRole="IcerikMedya" ToRole="Medya" />
+        </EntityType>
+        <EntityType Name="Medya">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MedyaTipi" Type="Int32" Nullable="false" />
+          <Property Name="MedyaUrl" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EklemeTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="IcerikMedya" Relationship="SehirDetayModel.FK_IcerikMedya_Medya" FromRole="Medya" ToRole="IcerikMedya" />
+        </EntityType>
+        <Association Name="FK_IcerikMedya_Icerik">
+          <End Type="SehirDetayModel.Icerik" Role="Icerik" Multiplicity="1" />
+          <End Type="SehirDetayModel.IcerikMedya" Role="IcerikMedya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Icerik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IcerikMedya">
+              <PropertyRef Name="IcerikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IcerikMedya_Medya">
+          <End Type="SehirDetayModel.Medya" Role="Medya" Multiplicity="1" />
+          <End Type="SehirDetayModel.IcerikMedya" Role="IcerikMedya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medya">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IcerikMedya">
+              <PropertyRef Name="MedyaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SehirDetayModelStoreContainer" CdmEntityContainer="SehirDetayEntities">
+          <EntitySetMapping Name="Ayar">
+            <EntityTypeMapping TypeName="SehirDetayModel.Ayar">
+              <MappingFragment StoreEntitySet="Ayar">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Anahtar" ColumnName="Anahtar" />
+                <ScalarProperty Name="Deger" ColumnName="Deger" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Icerik">
+            <EntityTypeMapping TypeName="SehirDetayModel.Icerik">
+              <MappingFragment StoreEntitySet="Icerik">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Detay" ColumnName="Detay" />
+                <ScalarProperty Name="KategoriId" ColumnName="KategoriId" />
+                <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+                <ScalarProperty Name="OlusturulmaTarihi" ColumnName="OlusturulmaTarihi" />
+                <ScalarProperty Name="GuncellenmeTarihi" ColumnName="GuncellenmeTarihi" />
+                <ScalarProperty Name="AnahtarKelimeler" ColumnName="AnahtarKelimeler" />
+                <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+                <ScalarProperty Name="Konum" ColumnName="Konum" />
+                <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+                <ScalarProperty Name="IlceId" ColumnName="IlceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ilce">
+            <EntityTypeMapping TypeName="SehirDetayModel.Ilce">
+              <MappingFragment StoreEntitySet="Ilce">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IlceAd" ColumnName="IlceAd" />
+                <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+                <ScalarProperty Name="Konum" ColumnName="Konum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kategori">
+            <EntityTypeMapping TypeName="SehirDetayModel.Kategori">
+              <MappingFragment StoreEntitySet="Kategori">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KategoriAd" ColumnName="KategoriAd" />
+                <ScalarProperty Name="UstKategoriId" ColumnName="UstKategoriId" />
+                <ScalarProperty Name="Lft" ColumnName="Lft" />
+                <ScalarProperty Name="Rgt" ColumnName="Rgt" />
+                <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanici">
+            <EntityTypeMapping TypeName="SehirDetayModel.Kullanici">
+              <MappingFragment StoreEntitySet="Kullanici">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+                <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+                <ScalarProperty Name="CepTelefonu" ColumnName="CepTelefonu" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+                <ScalarProperty Name="IlceId" ColumnName="IlceId" />
+                <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+                <ScalarProperty Name="AktivasyonKodu" ColumnName="AktivasyonKodu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KullaniciRol">
+            <EntityTypeMapping TypeName="SehirDetayModel.KullaniciRol">
+              <MappingFragment StoreEntitySet="KullaniciRol">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+                <ScalarProperty Name="RolId" ColumnName="RolId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="SehirDetayModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RolAd" ColumnName="RolAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sehir">
+            <EntityTypeMapping TypeName="SehirDetayModel.Sehir">
+              <MappingFragment StoreEntitySet="Sehir">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SehirAd" ColumnName="SehirAd" />
+                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+                <ScalarProperty Name="Konum" ColumnName="Konum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ulasim">
+            <EntityTypeMapping TypeName="SehirDetayModel.Ulasim">
+              <MappingFragment StoreEntitySet="Ulasim">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UlasimTurId" ColumnName="UlasimTurId" />
+                <ScalarProperty Name="IcerikId" ColumnName="IcerikId" />
+                <ScalarProperty Name="Tarif" ColumnName="Tarif" />
+                <ScalarProperty Name="Puan" ColumnName="Puan" />
+                <ScalarProperty Name="OlusturulmaTarihi" ColumnName="OlusturulmaTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UlasimTur">
+            <EntityTypeMapping TypeName="SehirDetayModel.UlasimTur">
+              <MappingFragment StoreEntitySet="UlasimTur">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UlasimTuru" ColumnName="UlasimTuru" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Yorum">
+            <EntityTypeMapping TypeName="SehirDetayModel.Yorum">
+              <MappingFragment StoreEntitySet="Yorum">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IcerikId" ColumnName="IcerikId" />
+                <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+                <ScalarProperty Name="YorumMetni" ColumnName="YorumMetni" />
+                <ScalarProperty Name="Puan" ColumnName="Puan" />
+                <ScalarProperty Name="Konum" ColumnName="Konum" />
+                <ScalarProperty Name="OlusturulmaTarihi" ColumnName="OlusturulmaTarihi" />
+                <ScalarProperty Name="GuncellenmeTarihi" ColumnName="GuncellenmeTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IcerikMedya">
+            <EntityTypeMapping TypeName="SehirDetayModel.IcerikMedya">
+              <MappingFragment StoreEntitySet="IcerikMedya">
+                <ScalarProperty Name="MedyaId" ColumnName="MedyaId" />
+                <ScalarProperty Name="IcerikId" ColumnName="IcerikId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medya">
+            <EntityTypeMapping TypeName="SehirDetayModel.Medya">
+              <MappingFragment StoreEntitySet="Medya">
+                <ScalarProperty Name="EklemeTarihi" ColumnName="EklemeTarihi" />
+                <ScalarProperty Name="MedyaUrl" ColumnName="MedyaUrl" />
+                <ScalarProperty Name="MedyaTipi" ColumnName="MedyaTipi" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,790 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@section head{
+    <script src="~/Scripts/jquery.bxslider.min.js"></script>
+}
+
+
+<!-- is search -->	<div class="clearfix clear"></div>
+<div class="content-wrapper">
+    <div class="content">
+        <!-- Sidebar With Content Section-->
+        <div class="pagebuilder-wrapper">
+            <div id="content-section-1">
+                <div class="container-fluid">
+                    <div class="kode-full-size-wrapper row " id="map_wrapper_kode" style="padding-bottom: 30px;  background-color: #ffffff; ">
+                        <div class="kode-item kode-slider-item"><div class="kode-bxslider" data-pausetime="7000" data-slidespeed="600" data-effect="fade"><ul class="bxslider"><li><a href="#" data-rel="fancybox" target="_blank"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/travel_slider_1.jpg" alt="" width="2200" height="900" /><div class="kode-caption-wrapper position-center"><div class="kode-caption-inner"><div class="kode-caption"><div class="kode-caption-title">LOOKING FOR TRAVEL AGENT</div><div class="kode-caption-text">WE ARE AVAILABLE 24/7</div><div class="kode-linksection">ASK NOW</div></div></div></div></a></li><li><a href="#" data-rel="fancybox" target="_blank"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/travel_slider_2.jpg" alt="" width="2200" height="900" /><div class="kode-caption-wrapper position-center"><div class="kode-caption-inner"><div class="kode-caption"><div class="kode-caption-title">LOOKING FOR BEST TRIP</div><div class="kode-caption-text">WE OFFER BEST SERVICES</div><div class="kode-linksection">GET DEAL NOW</div></div></div></div></a></li><li><a href="#" data-rel="fancybox" target="_blank"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/travel_slider_3.jpg" alt="" width="2200" height="900" /><div class="kode-caption-wrapper position-center"><div class="kode-caption-inner"><div class="kode-caption"><div class="kode-caption-title">WE PLAN YOUR TRIP</div><div class="kode-caption-text">BEST AVAILABLE CHOICE IN TOWN</div><div class="kode-linksection">GET STARTED NOW</div></div></div></div></a></li><li><a href="#" data-rel="fancybox" target="_blank"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/travel_slider_5.jpg" alt="" width="2200" height="900" /><div class="kode-caption-wrapper position-center"><div class="kode-caption-inner"><div class="kode-caption"><div class="kode-caption-title">FAMILY TRIP PLANER</div><div class="kode-caption-text">THINKING LIKE A CREATIVE</div><div class="kode-linksection">GET TOUR NOW</div></div></div></div></a></li></ul></div></div><div class="kode-column col-md-12 columns">
+                            <div class="simple-column">
+                                <div class="advance_search">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="kd-tourform">
+                                                    <span class="formbtn">Search Here</span>
+                                                    <form class="advance-search-form" action="http://kodeforest.com/wp-demo/travel/layout/search-listing/" method="get">
+                                                        <ul>
+                                                            <li>
+                                                                <span class="keyword-txt">Keyword</span>
+                                                                <input type="text" name="keyword" id="keyword-txt" value=" " placeholder="Any" />
+                                                            </li>
+                                                            <li>
+                                                                <span class="select-days">Days</span>
+                                                                <label for="select-days">
+                                                                    <select name="days" id="select-days" class="search-select">
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="5">5</option>
+                                                                        <option value="6">6</option>
+                                                                        <option value="7">7</option>
+                                                                        <option value="8">8</option>
+                                                                        <option value="9">9</option>
+                                                                        <option value="10">10</option>
+                                                                        <option value="any" selected="selected">Any</option>
+                                                                    </select>
+                                                                </label>
+                                                            </li>
+                                                            <li>
+                                                                <span class="select-min-price">Min Price</span>
+                                                                <label for="select-min-price">
+                                                                    <select name="min-price" id="select-min-price" class="search-select">
+                                                                        <option value="any" selected="selected">Any</option>
+                                                                        <option value="1000">$1000</option>
+                                                                        <option value="5000">$5000</option>
+                                                                        <option value="10000">$10000</option>
+                                                                        <option value="50000">$50000</option>
+                                                                        <option value="100000">$100000</option>
+                                                                        <option value="200000">$200000</option>
+                                                                        <option value="300000">$300000</option>
+                                                                        <option value="400000">$400000</option>
+                                                                        <option value="500000">$500000</option>
+                                                                        <option value="600000">$600000</option>
+                                                                        <option value="700000">$700000</option>
+                                                                        <option value="800000">$800000</option>
+                                                                        <option value="900000">$900000</option>
+                                                                        <option value="1000000">$1000000</option>
+                                                                        <option value="1500000">$1500000</option>
+                                                                        <option value="2000000">$2000000</option>
+                                                                        <option value="2500000">$2500000</option>
+                                                                        <option value="5000000">$5000000</option>
+                                                                    </select>
+                                                                </label>
+                                                            </li>
+                                                            <li>
+                                                                <span class="select-min-price">Max Price</span>
+                                                                <label for="select-min-price">
+                                                                    <select name="max-price" id="select-max-price" class="search-select">
+                                                                        <option value="any" selected="selected">Any</option>
+                                                                        <option value="5000">$5000</option>
+                                                                        <option value="10000">$10000</option>
+                                                                        <option value="50000">$50000</option>
+                                                                        <option value="100000">$100000</option>
+                                                                        <option value="200000">$200000</option>
+                                                                        <option value="300000">$300000</option>
+                                                                        <option value="400000">$400000</option>
+                                                                        <option value="500000">$500000</option>
+                                                                        <option value="600000">$600000</option>
+                                                                        <option value="700000">$700000</option>
+                                                                        <option value="800000">$800000</option>
+                                                                        <option value="900000">$900000</option>
+                                                                        <option value="1000000">$1000000</option>
+                                                                        <option value="1500000">$1500000</option>
+                                                                        <option value="2000000">$2000000</option>
+                                                                        <option value="2500000">$2500000</option>
+                                                                        <option value="5000000">$5000000</option>
+                                                                        <option value="10000000">$10000000</option>
+                                                                    </select>
+                                                                </label>
+                                                            </li>
+                                                            <li class="k-submit-btn"><input type="submit" class="thbg-color" value="Search Now"></li>
+                                                        </ul>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="clear"></div>
+                    </div>
+                </div><div class="clear"></div>
+            </div><div id="content-section-2">
+                <div class="section-container container">
+                    <div class="row">
+                        <div class="kode-column col-md-12 columns">
+                            <div class="simple-column">
+                                <div class="kd-modrentitle">
+                                    <h3 style="color:">Did you know?</h3>
+                                    <div class="kd-divider"><div class="short-seprator"><span><i style="color:#000" class="fa fa-home"></i></span></div></div>
+                                    <p style="color:">Mauris ullamcorper nibh quis leo ultrices in hendrerit velit tristiqueut augue in nulla lacinia bibendum liberoras rutrum act.</p>
+                                </div>
+                            </div>
+                        </div><div class="clear"></div><div class="clear"></div><div class="clear"></div><div class="kode-item kode-divider-item" style="margin-bottom: 30px;"><div class="kode-divider"></div></div><div class="clear"></div><div class="kode-column col-md-6 columns">
+                            <div class="kode-services type-2">
+                                <figure><a href="#"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/6-350x350.jpg" alt="" /></a></figure><div class="kode-service-info">
+                                    <h2>Things To Do</h2>
+                                    <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id.Nunc cursus libero purus ac congue ar lorem cursus ut sed vitaeNunc cursus libero purus ac congue ar lorem cursus ut sed vita.</p>
+                                    <a class="kd-readmore thbg-colorhover" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div><div class="kode-column col-md-6 columns">
+                            <div class="kode-services type-2">
+                                <figure><a href="#"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/travel_slider_4-350x350.jpg" alt="" /></a></figure><div class="kode-service-info">
+                                    <h2>Things To Do</h2>
+                                    <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id.Nunc cursus libero purus ac congue ar lorem cursus ut sed vitaeNunc cursus libero purus ac congue ar lorem cursus ut sed vita.</p>
+                                    <a class="kd-readmore thbg-colorhover" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div><div class="clear"></div><div class="clear"></div><div class="clear"></div><div class="kode-item kode-divider-item" style="margin-bottom: 20px;"><div class="kode-divider"></div></div><div class="clear"></div><div class="kode-column col-md-6 columns">
+                            <div class="kode-services type-2">
+                                <figure><a href="#"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/travel_services_1-350x350.jpg" alt="" /></a></figure><div class="kode-service-info">
+                                    <h2>Things To Do</h2>
+                                    <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id.Nunc cursus libero purus ac congue ar lorem cursus ut sed vitaeNunc cursus libero purus ac congue ar lorem cursus ut sed vita.</p>
+                                    <a class="kd-readmore thbg-colorhover" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div><div class="kode-column col-md-6 columns">
+                            <div class="kode-services type-2">
+                                <figure><a href="#"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/13-350x350.jpg" alt="" /></a></figure><div class="kode-service-info">
+                                    <h2>Things To Do</h2>
+                                    <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id.Nunc cursus libero purus ac congue ar lorem cursus ut sed vitaeNunc cursus libero purus ac congue ar lorem cursus ut sed vita.</p>
+                                    <a class="kd-readmore thbg-colorhover" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div><div class="clear"></div><div class="clear"></div><div class="clear"></div><div class="kode-item kode-divider-item" style="margin-bottom: 20px;"><div class="kode-divider"></div></div><div class="clear"></div>
+                    </div>
+                </div>
+            </div><div id="content-section-3">
+                <div class="kode-parallax-wrapper kode-background-image" id="kode-parallax-wrapper-1" data-bgspeed="0" style="background-image: url('http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/04/pakege1.jpg'); padding-top: 50px; padding-bottom: 50px; ">
+                    <style scoped type="text/css">
+                        #kode-parallax-wrapper-1 {
+                            position: relative;
+                        }
+
+                            #kode-parallax-wrapper-1 .container {
+                                position: relative;
+                                z-index: 9;
+                            }
+
+                            #kode-parallax-wrapper-1:before {
+                                opacity: 0.03;
+                                content: "";
+                                position: absolute;
+                                left: 0px;
+                                top: 0px;
+                                height: 100%;
+                                width: 100%;
+                                background-color: #ffffff;
+                            }
+                    </style>
+            <div class="container">
+                        <div class="simple-column">
+                            <div class="kd-modrentitle">
+                                <h3 style="color:">Featured Packages</h3>
+                                <div class="kd-divider"><div class="short-seprator"><span><i style="color:#000" class="fa fa-globe"></i></span></div></div>
+                                <p style="color:">Here are the latest featured packages offered by us. You can get them with discount offer. We will be making your trip luxuries with us.</p>
+                            </div>
+                        </div><div class="clear"></div><div class="kode-item kode-divider-item" style="margin-bottom: 30px;"><div class="kode-divider"></div></div><div class="col-md-12">
+                            <div class="row kode-package-list kode-package" style="margin-bottom: 10px;">
+                                <div class="clear"></div>
+                                <article class="col-md-4 columns">
+                                    <div class="package-mainsection kode-ux">
+                                        <figure>
+                                            <a href="http://kodeforest.com/wp-demo/travel/layout/package/paris-and-bordeaux-4/"><img width="360" height="300" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/5-360x300.jpg" class="attachment-small-grid-size wp-post-image" alt="5" /></a>
+                                            <figcaption>
+                                                <span class="package-price thbg-color">$7000</span>
+                                                <div class="kd-bottomelement">
+                                                    <h5><a href="http://kodeforest.com/wp-demo/travel/layout/package/paris-and-bordeaux-4/">Trip To Kazakhst</a></h5>
+                                                    <div style="background-color: #00c4d6;" class="days-counter"><span>11</span><span>Days</span></div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </article>
+                                <article class="col-md-4 columns">
+                                    <div class="package-mainsection kode-ux">
+                                        <figure>
+                                            <a href="http://kodeforest.com/wp-demo/travel/layout/package/20-days-from-paris-to-venice-4/"><img width="360" height="300" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/22-360x300.jpg" class="attachment-small-grid-size wp-post-image" alt="22" /></a>
+                                            <figcaption>
+                                                <span class="package-price thbg-color">$2000</span>
+                                                <div class="kd-bottomelement">
+                                                    <h5><a href="http://kodeforest.com/wp-demo/travel/layout/package/20-days-from-paris-to-venice-4/">20 Days from Par</a></h5>
+                                                    <div style="background-color: #00c4d6;" class="days-counter"><span>20</span><span>Days</span></div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </article>
+                                <article class="col-md-4 columns">
+                                    <div class="package-mainsection kode-ux">
+                                        <figure>
+                                            <a href="http://kodeforest.com/wp-demo/travel/layout/package/honeymoon-suite-dubai-4/"><img width="360" height="300" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/package-2-360x300.jpg" class="attachment-small-grid-size wp-post-image" alt="package-2" /></a>
+                                            <figcaption>
+                                                <span class="package-price thbg-color">$9000</span>
+                                                <div class="kd-bottomelement">
+                                                    <h5><a href="http://kodeforest.com/wp-demo/travel/layout/package/honeymoon-suite-dubai-4/">Honeymoon Suite </a></h5>
+                                                    <div style="background-color: #00c4d6;" class="days-counter"><span>12</span><span>Days</span></div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </article>
+                            </div>
+                        </div><div class="kode-column col-md-12 columns">
+                            <div class="simple-column" style="margin-bottom: 0PX;">
+                                <p style="text-align: center;">
+                                    <style scoped>
+                                        .button-1 {
+                                            color: #fffffff;
+                                            background: #fade03;
+                                        }
+                                    </style><a class="button-1 custom-btn kd-medium" href="#" target="_self">LOAD MORE</a>
+                                </p>
+                            </div>
+                        </div><div class="clear"></div>
+                    </div>
+                </div><div class="clear"></div>
+            </div><div id="content-section-4">
+                <div class="section-container container">
+                    <div class="row">
+                        <div class="clear"></div><div class="kode-item kode-divider-item" style="margin-bottom: 60px;"><div class="kode-divider"></div></div><div class="clear"></div><div class="kode-column col-md-8 columns">
+                            <div class="simple-column">
+                                <div class="heading-style4">
+                                    <h2 style="color:">our latest blogs</h2>
+                                    <p style="color:"></p>
+                                </div>
+                            </div><div class="col-md-12 blog-item-wrapper">
+                                <div class="blog-item-holder row">
+                                    <div class="clear"></div><div class="col-md-12 columns">
+                                        <div class="kode-item kode-blog-medium">
+                                            <article id="blog-medium-74" class="post-74 post type-post status-publish format-standard has-post-thumbnail hentry category-ecommerce category-posts tag-blog tag-packages tag-posts tag-travel">
+                                                <div class="bloginner">
+                                                    <figure class="kode-blog-thumbnail"><a href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-7/"> <img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/package-7-360x300.jpg" alt="" width="360" height="300" /></a><figcaption><a class="fa fa-plus-circle" href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-7/"></a></figcaption></figure>			<div class="kd-bloginfo kode-ux">
+                                                        <h2><a href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-7/">Amazing Places</a></h2>
+                                                        <ul class="kd-postoption">
+                                                            <li class="blog-info blog-category"><i class="fa fa-list"></i><a href="http://kodeforest.com/wp-demo/travel/layout/category/ecommerce/" rel="tag">ecommerce</a><span class="sep">,</span> <a href="http://kodeforest.com/wp-demo/travel/layout/category/posts/" rel="tag">posts</a></li>
+                                                            <li><span class="datetime">| Apr 30 2015</span></li>
+                                                        </ul>
+                                                        <div class="kode-blog-content"><p>If it fits, i sits knock dis off table head butt cant eat out of my own dish hide at bottom of staircase to trip&hellip;</p></div>			<div class="kd-usernetwork">
+                                                            <ul class="kd-blogcomment">
+                                                                <li class="blog-info blog-comment"><i class="fa fa-comment-o"></i><a href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-7/#respond">1</a></li>
+                                                                <li><a class="thcolorhover" href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-7/"><i class="fa fa-heart-o"></i> 663</a></li>
+                                                            </ul>
+                                                            <div class="kd-social-network">
+
+                                                                <ul class="social-sharing">
+                                                                    <li><a title="" data-placement="top" data-toggle="tooltip" class="thbg-colorhover fa fa-facebook" href="http://www.facebook.com/share.php?u=http://kodeforest.com/wp-demo/travel/layout/homepgae-with-slider/" data-original-title="Facebook"></a></li>
+                                                                    <li><a title="" data-placement="top" data-toggle="tooltip" class="thbg-colorhover fa fa-twitter" href="http://twitter.com/home?status=Amazing%20Places-http://kodeforest.com/wp-demo/travel/layout/homepgae-with-slider/" data-original-title="Twitter"></a></li>
+                                                                    <li><a title="" data-placement="top" data-toggle="tooltip" class="thbg-colorhover fa fa-google-plus" href="https://plus.google.com/share?url=http://kodeforest.com/wp-demo/travel/layout/homepgae-with-slider/" data-original-title="Google-Plus"></a></li>
+                                                                    <li><a title="" data-placement="top" data-toggle="tooltip" class="thbg-colorhover fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&#038;url=http://kodeforest.com/wp-demo/travel/layout/homepgae-with-slider/&#038;title=Amazing%20Places" data-original-title="LinkedIn"></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div><div class="clear"></div><div class="col-md-12 columns">
+                                        <div class="kode-item kode-blog-medium">
+                                            <article id="blog-medium-73" class="post-73 post type-post status-publish format-standard has-post-thumbnail hentry category-ecommerce category-posts tag-blog tag-packages tag-posts tag-travel">
+                                                <div class="bloginner">
+                                                    <figure class="kode-blog-thumbnail"><a href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-6/"> <img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/package-3-360x300.jpg" alt="" width="360" height="300" /></a><figcaption><a class="fa fa-plus-circle" href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-6/"></a></figcaption></figure>			<div class="kd-bloginfo kode-ux">
+                                                        <h2><a href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-6/">Travel Insurance</a></h2>
+                                                        <ul class="kd-postoption">
+                                                            <li class="blog-info blog-category"><i class="fa fa-list"></i><a href="http://kodeforest.com/wp-demo/travel/layout/category/ecommerce/" rel="tag">ecommerce</a><span class="sep">,</span> <a href="http://kodeforest.com/wp-demo/travel/layout/category/posts/" rel="tag">posts</a></li>
+                                                            <li><span class="datetime">| Apr 30 2015</span></li>
+                                                        </ul>
+                                                        <div class="kode-blog-content"><p>If it fits, i sits knock dis off table head butt cant eat out of my own dish hide at bottom of staircase to trip&helhellip;</p></div>			<div class="kd-usernetwork">
+                                                            <ul class="kd-blogcomment">
+                                                                <li class="blog-info blog-comment"><i class="fa fa-comment-o"></i><a href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-6/#respond">0</a></li>
+                                                                <li><a class="thcolorhover" href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-6/"><i class="fa fa-heart-o"></i> 235</a></li>
+                                                            </ul>
+                                                            <div class="kd-social-network">
+
+                                                                <ul class="social-sharing">
+                                                                    <li><a title="" data-placement="top" data-toggle="tooltip" class="thbg-colorhover fa fa-facebook" href="http://www.facebook.com/share.php?u=http://kodeforest.com/wp-demo/travel/layout/homepgae-with-slider/" data-original-title="Facebook"></a></li>
+                                                                    <li><a title="" data-placement="top" data-toggle="tooltip" class="thbg-colorhover fa fa-twitter" href="http://twitter.com/home?status=Travel%20Insurance-http://kodeforest.com/wp-demo/travel/layout/homepgae-with-slider/" data-original-title="Twitter"></a></li>
+                                                                    <li><a title="" data-placement="top" data-toggle="tooltip" class="thbg-colorhover fa fa-google-plus" href="https://plus.google.com/share?url=http://kodeforest.com/wp-demo/travel/layout/homepgae-with-slider/" data-original-title="Google-Plus"></a></li>
+                                                                    <li><a title="" data-placement="top" data-toggle="tooltip" class="thbg-colorhover fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&#038;url=http://kodeforest.com/wp-demo/travel/layout/homepgae-with-slider/&#038;title=Travel%20Insurance" data-original-title="LinkedIn"></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div><div class="clear"></div><div class="col-md-12 columns">
+                                        <div class="kode-item kode-blog-medium">
+                                            <article id="blog-medium-72" class="post-72 post type-post status-publish format-standard has-post-thumbnail hentry category-ecommerce category-posts tag-blog tag-packages tag-posts tag-travel">
+                                                <div class="bloginner">
+                                                    <figure class="kode-blog-thumbnail"><a href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-5/"> <img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/19-360x300.jpg" alt="" width="360" height="300" /></a><figcaption><a class="fa fa-plus-circle" href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-5/"></a></figcaption></figure>			<div class="kd-bloginfo kode-ux">
+                                                        <h2><a href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-5/">Love With Travel</a></h2>
+                                                        <ul class="kd-postoption">
+                                                            <li class="blog-info blog-category"><i class="fa fa-list"></i><a href="http://kodeforest.com/wp-demo/travel/layout/category/ecommerce/" rel="tag">ecommerce</a><span class="sep">,</span> <a href="http://kodeforest.com/wp-demo/travel/layout/category/posts/" rel="tag">posts</a></li>
+                                                            <li><span class="datetime">| Apr 30 2015</span></li>
+                                                        </ul>
+                                                        <div class="kode-blog-content"><p>If it fits, i sits knock dis off table head butt cant eat out of my own dish hide at bottom of staircase to trip&hellip;</p></div>			<div class="kd-usernetwork">
+                                                            <ul class="kd-blogcomment">
+                                                                <li class="blog-info blog-comment"><i class="fa fa-comment-o"></i><a href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-5/#respond">1</a></li>
+                                                                <li><a class="thcolorhover" href="http://kodeforest.com/wp-demo/travel/layout/lorem-ipsum-dolor-sit-amet-5/"><i class="fa fa-heart-o"></i> 241</a></li>
+                                                            </ul>
+                                                            <div class="kd-social-network">
+
+                                                                <ul class="social-sharing">
+                                                                    <li><a title="" data-placement="top" data-toggle="tooltip" class="thbg-colorhover fa fa-facebook" href="http://www.facebook.com/share.php?u=http://kodeforest.com/wp-demo/travel/layout/homepgae-with-slider/" data-original-title="Facebook"></a></li>
+                                                                    <li><a title="" data-placement="top" data-toggle="tooltip" class="thbg-colorhover fa fa-twitter" href="http://twitter.com/home?status=Love%20With%20Travel-http://kodeforest.com/wp-demo/travel/layout/homepgae-with-slider/" data-original-title="Twitter"></a></li>
+                                                                    <li><a title="" data-placement="top" data-toggle="tooltip" class="thbg-colorhover fa fa-google-plus" href="https://plus.google.com/share?url=http://kodeforest.com/wp-demo/travel/layout/homepgae-with-slider/" data-original-title="Google-Plus"></a></li>
+                                                                    <li><a title="" data-placement="top" data-toggle="tooltip" class="thbg-colorhover fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&#038;url=http://kodeforest.com/wp-demo/travel/layout/homepgae-with-slider/&#038;title=Love%20With%20Travel" data-original-title="LinkedIn"></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="kode-column col-md-4 columns">
+                            <div class="widget kode-widget kode-sidebar-element">
+                                <div id="kode-travel-widget-2" class="widget widget_kode-travel-widget kode-widget">
+                                    <h2 class="widget-title">Travel Widget</h2><div class="clear"></div><div class="kd-bookingtab">
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li class="active"><a href="#tab_1" aria-controls="tab_1" role="tab" data-toggle="tab"><i class="fa fa fa-building"></i></a></li>
+                                            <li><a href="#tab_2" aria-controls="tab_2" role="tab" data-toggle="tab"><i class="fa fa fa-bus"></i></a></li>
+                                            <li><a href="#tab_3" aria-controls="tab_3" role="tab" data-toggle="tab"><i class="fa fa fa-plane"></i></a></li>
+                                            <li><a href="#tab_4" aria-controls="tab_4" role="tab" data-toggle="tab"><i class="fa fa fa-ambulance"></i></a></li>
+                                        </ul>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="tab_1">
+                                                <div class="kd-booking-list">
+                                                    <h2>Book hotel</h2>
+                                                    <ul>
+                                                        <li><i class="fa fa-check-circle"></i> No.1 for booking in our surroundings</li>
+                                                        <li><i class="fa fa-check-circle"></i> No hidden costs</li>
+                                                        <li><i class="fa fa-check-circle"></i> Attractive offers with price advantage</li>
+                                                    </ul>
+                                                </div>
+                                                <div role="form" class="wpcf7" id="wpcf7-f215-o1" lang="en-US" dir="ltr">
+                                                    <div class="screen-reader-response"></div>
+                                                    <form action="/wp-demo/travel/layout/homepgae-with-slider/#wpcf7-f215-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+                                                        <div style="display: none;">
+                                                            <input type="hidden" name="_wpcf7" value="215" />
+                                                            <input type="hidden" name="_wpcf7_version" value="4.2.2" />
+                                                            <input type="hidden" name="_wpcf7_locale" value="en_US" />
+                                                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f215-o1" />
+                                                            <input type="hidden" name="_wpnonce" value="d69a177906" />
+                                                        </div>
+                                                        <div class="kd-bookingform">
+                                                            <div class="kd-datepicker">
+                                                                <ul>
+                                                                    <li><label>Destination</label> <span class="wpcf7-form-control-wrap text-686"><input type="text" name="text-686" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Enter place / regions" /></span></li>
+                                                                    <li><label>Arrival</label> <span class="wpcf7-form-control-wrap date-374"><input type="date" name="date-374" value="" class="wpcf7-form-control wpcf7-date wpcf7-validates-as-date" aria-invalid="false" /></span></li>
+                                                                    <li><label>Departure</label><span class="wpcf7-form-control-wrap date-375"><input type="date" name="date-375" value="" class="wpcf7-form-control wpcf7-date wpcf7-validates-as-date" aria-invalid="false" /></span></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="kd-tourform">
+                                                                <ul>
+                                                                    <li><span>Rooms</span><label><span class="wpcf7-form-control-wrap menu-756"><select name="menu-756" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="1 Room">1 Room</option><option value="2 Rooms">2 Rooms</option><option value="3 Rooms">3 Rooms</option><option value="4 Rooms">4 Rooms</option></select></span></label></li>
+                                                                    <li><span>per room</span><label><span class="wpcf7-form-control-wrap menu-757"><select name="menu-757" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="2 Adults">2 Adults</option><option value="3 Adults">3 Adults</option><option value="4 Adults">4 Adults</option><option value="5 Adults">5 Adults</option></select></span></label></li>
+                                                                    <li><span>Children</span><label> <span class="wpcf7-form-control-wrap menu-756"><select name="menu-756" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="1 Children">1 Children</option><option value="2 Children">2 Children</option><option value="4 Children">4 Children</option><option value="6 Children">6 Children</option></select></span></label></li>
+                                                                    <li><input type="submit" value="Submit Now" class="wpcf7-form-control wpcf7-submit thbg-color" /></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="wpcf7-response-output wpcf7-display-none"></div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="tab_2">
+                                                <div class="kd-booking-list">
+                                                    <h2>Book hotel</h2>
+                                                    <ul>
+                                                        <li><i class="fa fa-check-circle"></i> No.1 for booking in our surroundings</li>
+                                                        <li><i class="fa fa-check-circle"></i> No hidden costs</li>
+                                                        <li><i class="fa fa-check-circle"></i> Attractive offers with price advantage</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="tab_3">
+                                                <div class="kd-booking-list">
+                                                    <h2>Book hotel</h2>
+                                                    <ul>
+                                                        <li><i class="fa fa-check-circle"></i> No.1 for booking in our surroundings</li>
+                                                        <li><i class="fa fa-check-circle"></i> No hidden costs</li>
+                                                        <li><i class="fa fa-check-circle"></i> Attractive offers with price advantage</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="tab_4">
+                                                <div class="kd-booking-list">
+                                                    <h2>Book hotel</h2>
+                                                    <ul>
+                                                        <li><i class="fa fa-check-circle"></i> No.1 for booking in our surroundings</li>
+                                                        <li><i class="fa fa-check-circle"></i> No hidden costs</li>
+                                                        <li><i class="fa fa-check-circle"></i> Attractive offers with price advantage</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="clear"></div><div class="clear"></div><div class="simple-column" style="margin-bottom: 30px;">
+                            <div class="kd-modrentitle">
+                                <h3 style="color:">Meet our Trip Organizer</h3>
+                                <div class="kd-divider"><div class="short-seprator"><span><i style="color:#000" class="fa fa-globe"></i></span></div></div>
+                                <p style="color:">Mauris ullamcorper nibh quis leo ultrices in hendrerit velit tristiqueut augue in nulla lacinia bibendum liberoras rutrum act.</p>
+                            </div>
+                        </div><div class="clear"></div><div class="clear"></div><div class="clear"></div><div class="kode-item kode-divider-item" style="margin-bottom: 30px;"><div class="kode-divider"></div></div><div class="clear"></div><div class="clear"></div><div class="team-grid kode-team col-md-12">
+                            <div class="row">
+                                <div class="clear"></div><article class="theme-margin col-md-3 columns">
+                                    <div class="team-mainsection kode-ux">
+                                        <figure><a href="http://kodeforest.com/wp-demo/travel/layout/team/ramsay/"><img width="350" height="350" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/61-350x350.jpg" class="attachment-350x350 wp-post-image" alt="6" /></a></figure>
+                                        <div class="kd-teaminfo">
+                                            <h5><a href="http://kodeforest.com/wp-demo/travel/layout/team/ramsay/">Ramsay</a></h5>
+                                            <span>Tour Agent</span>
+                                            <p>
+                                                Biography
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                            </p>
+                                            <div class="kd-social-network">
+                                                <ul>
+                                                    <li><a data-original-title="Facebook" href="#"><i class="fa fa-facebook-square"></i></a></li>
+                                                    <li><a data-original-title="Twitter" href="#"><i class="fa fa-twitter-square"></i></a></li>
+                                                    <li><a data-original-title="Google" href="#"><i class="fa fa-youtube"></i></a></li>
+                                                    <li><a data-original-title="Linkedin" href="#"><i class="fa fa-pinterest"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article><article class="theme-margin col-md-3 columns">
+                                    <div class="team-mainsection kode-ux">
+                                        <figure><a href="http://kodeforest.com/wp-demo/travel/layout/team/roy-stone/"><img width="350" height="350" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/81-350x350.jpg" class="attachment-350x350 wp-post-image" alt="8" /></a></figure>
+                                        <div class="kd-teaminfo">
+                                            <h5><a href="http://kodeforest.com/wp-demo/travel/layout/team/roy-stone/">Roy Stone</a></h5>
+                                            <span>Trip Advisor</span>
+                                            <p>
+                                                Biography
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                            </p>
+                                            <div class="kd-social-network">
+                                                <ul>
+                                                    <li><a data-original-title="Facebook" href="#"><i class="fa fa-facebook-square"></i></a></li>
+                                                    <li><a data-original-title="Twitter" href="#"><i class="fa fa-twitter-square"></i></a></li>
+                                                    <li><a data-original-title="Google" href="#"><i class="fa fa-youtube"></i></a></li>
+                                                    <li><a data-original-title="Linkedin" href="#"><i class="fa fa-pinterest"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article><article class="theme-margin col-md-3 columns">
+                                    <div class="team-mainsection kode-ux">
+                                        <figure><a href="http://kodeforest.com/wp-demo/travel/layout/team/roy-miller/"><img width="350" height="350" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/51-350x350.jpg" class="attachment-350x350 wp-post-image" alt="5" /></a></figure>
+                                        <div class="kd-teaminfo">
+                                            <h5><a href="http://kodeforest.com/wp-demo/travel/layout/team/roy-miller/">Roy Miller</a></h5>
+                                            <span>Tour Manager</span>
+                                            <p>
+                                                Biography
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                            </p>
+                                            <div class="kd-social-network">
+                                                <ul>
+                                                    <li><a data-original-title="Facebook" href="#"><i class="fa fa-facebook-square"></i></a></li>
+                                                    <li><a data-original-title="Twitter" href="#"><i class="fa fa-twitter-square"></i></a></li>
+                                                    <li><a data-original-title="Google" href="#"><i class="fa fa-youtube"></i></a></li>
+                                                    <li><a data-original-title="Linkedin" href="#"><i class="fa fa-pinterest"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article><article class="theme-margin col-md-3 columns">
+                                    <div class="team-mainsection kode-ux">
+                                        <figure><a href="http://kodeforest.com/wp-demo/travel/layout/team/john-due/"><img width="350" height="350" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/25-350x350.jpg" class="attachment-350x350 wp-post-image" alt="2" /></a></figure>
+                                        <div class="kd-teaminfo">
+                                            <h5><a href="http://kodeforest.com/wp-demo/travel/layout/team/john-due/">John Due</a></h5>
+                                            <span>Services Manager</span>
+                                            <p>
+                                                Biography
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                            </p>
+                                            <div class="kd-social-network">
+                                                <ul>
+                                                    <li><a data-original-title="Facebook" href="#"><i class="fa fa-facebook-square"></i></a></li>
+                                                    <li><a data-original-title="Twitter" href="#"><i class="fa fa-twitter-square"></i></a></li>
+                                                    <li><a data-original-title="Google" href="#"><i class="fa fa-youtube"></i></a></li>
+                                                    <li><a data-original-title="Linkedin" href="#"><i class="fa fa-pinterest"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div><div class="clear"></div><div class="clear"></div><div class="simple-column" style="margin-bottom: 30px;">
+                            <div class="kd-modrentitle">
+                                <h3 style="color:">Our Trips Gallery</h3>
+                                <div class="kd-divider"><div class="short-seprator"><span><i style="color:#000" class="fa fa-globe"></i></span></div></div>
+                                <p style="color:">Mauris ullamcorper nibh quis leo ultrices in hendrerit velit tristiqueut augue in nulla lacinia bibendum liberoras rutrum act.</p>
+                            </div>
+                        </div><div class="clear"></div><div class="clear"></div><div class="clear"></div><div class="kode-item kode-divider-item" style="margin-bottom: 30px;"><div class="kode-divider"></div></div><div class="clear"></div><div class="clear"></div><div class="col-md-12 kode-gallery kode-package" style="margin-bottom: 0px;">
+                            <ul class="row">
+                                <li class="col-md-3 columns">
+                                    <div class="package-mainsection kode-ux">
+                                        <figure><a href="http://kodeforest.com/wp-demo/travel/layout/package/paris-and-bordeaux/"><img width="350" height="350" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/package-7-350x350.jpg" class="attachment-team-size wp-post-image" alt="package-7" /></a> <figcaption><a class="fa fa-plus" data-gal="prettyphoto[gallery]" href="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/package-7.jpg"></a></figcaption></figure>
+                                        <div class="kd-galleryinfo">
+                                            <h5><a href="http://kodeforest.com/wp-demo/travel/layout/package/paris-and-bordeaux/">Trip To Turkey</a></h5>
+                                            <span>Turkey</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-md-3 columns">
+                                    <div class="package-mainsection kode-ux">
+                                        <figure><a href="http://kodeforest.com/wp-demo/travel/layout/package/honeymoon-suite-dubai/"><img width="350" height="350" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/package-6-350x350.jpg" class="attachment-team-size wp-post-image" alt="package-6" /></a> <figcaption><a class="fa fa-plus" data-gal="prettyphoto[gallery]" href="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/package-6.jpg"></a></figcaption></figure>
+                                        <div class="kd-galleryinfo">
+                                            <h5><a href="http://kodeforest.com/wp-demo/travel/layout/package/honeymoon-suite-dubai/">Honeymoon Suite Dubai</a></h5>
+                                            <span>DUBAI</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-md-3 columns">
+                                    <div class="package-mainsection kode-ux">
+                                        <figure><a href="http://kodeforest.com/wp-demo/travel/layout/package/20-days-from-paris-to-venice/"><img width="350" height="350" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/package-4-350x350.jpg" class="attachment-team-size wp-post-image" alt="package-4" /></a> <figcaption><a class="fa fa-plus" data-gal="prettyphoto[gallery]" href="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/package-4.jpg"></a></figcaption></figure>
+                                        <div class="kd-galleryinfo">
+                                            <h5><a href="http://kodeforest.com/wp-demo/travel/layout/package/20-days-from-paris-to-venice/">20 Days Trip To Colombia</a></h5>
+                                            <span>Colombia</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-md-3 columns">
+                                    <div class="package-mainsection kode-ux">
+                                        <figure><a href="http://kodeforest.com/wp-demo/travel/layout/package/3-days-in-the-heart-of-paris/"><img width="350" height="350" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/12-350x350.jpg" class="attachment-team-size wp-post-image" alt="12" /></a> <figcaption><a class="fa fa-plus" data-gal="prettyphoto[gallery]" href="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/12.jpg"></a></figcaption></figure>
+                                        <div class="kd-galleryinfo">
+                                            <h5><a href="http://kodeforest.com/wp-demo/travel/layout/package/3-days-in-the-heart-of-paris/">15 Days in the Heart of Indonesia</a></h5>
+                                            <span>Indonesia</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div><div class="clear"></div>
+                    </div>
+                </div>
+            </div><div id="content-section-5">
+                <div class="kode-parallax-wrapper kode-background-image" id="kode-parallax-wrapper-2" data-bgspeed="0" style="background-image: url(''); padding-top: 50px; padding-bottom: 50px; ">
+                    <style scoped type="text/css">
+                        #kode-parallax-wrapper-2 {
+                            position: relative;
+                        }
+
+                            #kode-parallax-wrapper-2 .container {
+                                position: relative;
+                                z-index: 9;
+                            }
+
+                            #kode-parallax-wrapper-2:before {
+                                opacity: 0.9;
+                                content: "";
+                                position: absolute;
+                                left: 0px;
+                                top: 0px;
+                                height: 100%;
+                                width: 100%;
+                                background-color: #29c5f6;
+                            }
+                    </style><div class="container">
+                        <div class="kode-column col-md-3 columns">
+                            <div class="simple-column">
+                                <script type="text/javascript">
+                                    jQuery(document).ready(function ($) {
+                                        /* ---------------------------------------------------------------------- */
+                                        /*	Counter Functions
+                                        /* ---------------------------------------------------------------------- */
+                                        if ($("#count-1").length) {
+                                            $("#count-1").counterUp({
+                                                delay: 10,
+                                                time: 1000
+                                            });
+                                        }
+                                    });
+                                </script>
+                                <div class="kode-counter">
+                                    <i class="fa fa-share-square-o fa-3x"></i>
+                                    <span id="count-1" class="word-count">3586</span>
+                                    <small> SATISFIES CLIENTS </small>
+                                </div>
+                            </div>
+                        </div><div class="kode-column col-md-3 columns">
+                            <div class="simple-column" style="margin-bottom: 30px;">
+                                <script type="text/javascript">
+                                    jQuery(document).ready(function ($) {
+                                        /* ---------------------------------------------------------------------- */
+                                        /*	Counter Functions
+                                        /* ---------------------------------------------------------------------- */
+                                        if ($("#count-2").length) {
+                                            $("#count-2").counterUp({
+                                                delay: 10,
+                                                time: 1000
+                                            });
+                                        }
+                                    });
+                                </script>
+                                <div class="kode-counter">
+                                    <i class="fa fa-plane fa-3x"></i>
+                                    <span id="count-2" class="word-count">206</span>
+                                    <small>SATISFIES CLIENTS</small>
+                                </div>
+                            </div>
+                        </div><div class="kode-column col-md-3 columns">
+                            <div class="simple-column">
+                                <script type="text/javascript">
+                                    jQuery(document).ready(function ($) {
+                                        /* ---------------------------------------------------------------------- */
+                                        /*	Counter Functions
+                                        /* ---------------------------------------------------------------------- */
+                                        if ($("#count-3").length) {
+                                            $("#count-3").counterUp({
+                                                delay: 10,
+                                                time: 1000
+                                            });
+                                        }
+                                    });
+                                </script>
+                                <div class="kode-counter">
+                                    <i class="fa fa-plane fa-3x"></i>
+                                    <span id="count-3" class="word-count">356</span>
+                                    <small>SATISFIES CLIENTS</small>
+                                </div>
+                            </div>
+                        </div><div class="kode-column col-md-3 columns">
+                            <div class="simple-column">
+                                <script type="text/javascript">
+                                    jQuery(document).ready(function ($) {
+                                        /* ---------------------------------------------------------------------- */
+                                        /*	Counter Functions
+                                        /* ---------------------------------------------------------------------- */
+                                        if ($("#count-4").length) {
+                                            $("#count-4").counterUp({
+                                                delay: 10,
+                                                time: 1000
+                                            });
+                                        }
+                                    });
+                                </script>
+                                <div class="kode-counter">
+                                    <i class="fa fa-plane fa-3x"></i>
+                                    <span id="count-4" class="word-count">70</span>
+                                    <small>SATISFIES CLIENTS</small>
+                                </div>
+                            </div>
+                        </div><div class="clear"></div>
+                    </div>
+                </div><div class="clear"></div>
+            </div><div id="content-section-6">
+                <div class="section-container container">
+                    <div class="row">
+                        <div class="clear"></div><div class="kode-item kode-divider-item" style="margin-bottom: 40px;"><div class="kode-divider"></div></div><div class="clear"></div><div class="clear"></div><div class="simple-column">
+                            <div class="kd-modrentitle">
+                                <h3 style="color:">Happy Clients</h3>
+                                <div class="kd-divider"><div class="short-seprator"><span><i style="color:#000" class="fa  fa-heart-o"></i></span></div></div>
+                                <p style="color:"></p>
+                            </div>
+                        </div><div class="clear"></div><div class="clear"></div><div class="clear"></div><div class="kode-item kode-divider-item" style="margin-bottom: 30px;"><div class="kode-divider"></div></div><div class="clear"></div><div class="clear"></div><div class="col-md-12 kd-testimonial">
+                            <ul class="row">
+                                <li class="col-md-4 columns">
+                                    <div class="kd-testmnl-info">
+                                        <i class="fa fa-quote-left fa-3x"></i>
+                                        <p>Mauris convallis efficitur tincidunt. Aenean tincidunt quam gravida metus cursus rhoncus quis vitae purus. Vivamus porta venenatis ante eget vehicula.</p>
+                                    </div>
+                                    <figure>
+                                        <a href="http://kodeforest.com/wp-demo/travel/layout/testimonial/lorem-ipsum-dolor-sit/" class="kd-thumb"><img width="80" height="80" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/81-150x150.jpg" class="attachment-80x80 wp-post-image" alt="8" /></a>
+                                        <figcaption>
+                                            <h2><a class="thcolorhover" href="http://kodeforest.com/wp-demo/travel/layout/testimonial/lorem-ipsum-dolor-sit/">Lorem ipsum dolor</a></h2>
+                                            <span>Grek Ross, ThemeNector</span>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li class="col-md-4 columns">
+                                    <div class="kd-testmnl-info">
+                                        <i class="fa fa-quote-left fa-3x"></i>
+                                        <p>Nam efficitur, nisl a lacinia mollis, dui enim convallis nisl, quis sodales magna risus eget nisl. Praesent dapibus finibus enim in sagittis. In ullam</p>
+                                    </div>
+                                    <figure>
+                                        <a href="http://kodeforest.com/wp-demo/travel/layout/testimonial/lorem-ipsum-dolor/" class="kd-thumb"><img width="80" height="80" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/110-150x150.jpg" class="attachment-80x80 wp-post-image" alt="1" /></a>
+                                        <figcaption>
+                                            <h2><a class="thcolorhover" href="http://kodeforest.com/wp-demo/travel/layout/testimonial/lorem-ipsum-dolor/">Lorem ipsum dolor</a></h2>
+                                            <span>Grek Ross, ThemeNector</span>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li class="col-md-4 columns">
+                                    <div class="kd-testmnl-info">
+                                        <i class="fa fa-quote-left fa-3x"></i>
+                                        <p>
+                                            I have been extremely impressed with Ninzio team. In a highly specialized medical
+                                            device industry, they seized quickly on the opportunities and issue
+                                        </p>
+                                    </div>
+                                    <figure>
+                                        <a href="http://kodeforest.com/wp-demo/travel/layout/testimonial/lorem-ipsum/" class="kd-thumb"><img width="80" height="80" src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/05/25-150x150.jpg" class="attachment-80x80 wp-post-image" alt="2" /></a>
+                                        <figcaption>
+                                            <h2><a class="thcolorhover" href="http://kodeforest.com/wp-demo/travel/layout/testimonial/lorem-ipsum/">Lorem ipsum dolor</a></h2>
+                                            <span>Tourist Guide</span>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
+                        </div><div class="clear"></div><div class="clear"></div><div class="simple-column">
+                            <p><div class="col-md-12 kd-partner"><ul class="row"><li class="col-md-2"><a href="#"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/04/partner1.jpg" alt="" /></a></li><li class="col-md-2"><a href="#"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/04/partner2.jpg" alt="" /></a></li><li class="col-md-2"><a href="#"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/04/partner3.jpg" alt="" /></a></li><li class="col-md-2"><a href="#"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/04/partner4.jpg" alt="" /></a></li><li class="col-md-2"><a href="#"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/04/partner5.jpg" alt="" /></a></li><li class="col-md-2"><a href="#"><img src="http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/04/partner6.jpg" alt="" /></a></li></ul></div><div class="clearboth"></div><div class="sep-none" style="margin-top:15px;"><span></span></div></p>
+                        </div><div class="clear"></div>
+                    </div>
+                </div>
+            </div><div id="content-section-7">
+                <div class="kode-parallax-wrapper kode-background-image" id="kode-parallax-wrapper-3" data-bgspeed="0" style="background-image: url('http://kodeforest.com/wp-demo/travel/layout/wp-content/uploads/2015/04/trip-gallerybg.jpg'); padding-top: 50px; padding-bottom: 50px; ">
+                    <style scoped type="text/css">
+                        #kode-parallax-wrapper-3 {
+                            position: relative;
+                        }
+
+                            #kode-parallax-wrapper-3 .container {
+                                position: relative;
+                                z-index: 9;
+                            }
+
+                            #kode-parallax-wrapper-3:before {
+                                opacity: 0.03;
+                                content: "";
+                                position: absolute;
+                                left: 0px;
+                                top: 0px;
+                                height: 100%;
+                                width: 100%;
+                                background-color: #ffffff;
+                            }
+                    </style><div class="container">
+                        <div class="simple-column">
+                            <p>
+                                <div class="kd-modrentitle">
+                                    <h3 style="color:">subcribe to our newsletter</h3>
+                                    <div class="kd-divider"><div class="short-seprator"><span><i style="color:#000" class="fa fa-home"></i></span></div></div>
+                            <p style="color:">Get the latest report about the project and company profile..</p>
+                        </div><div class="newslatter-form kd-subscribe">
+                            <form action="http://feedburner.google.com/fb/a/mailverify" method="post">
+                                <p><input type="text" name="email" placeholder="Subscribe Email"></p>
+                                <input type="hidden" value="support@kodeforest.com" name="uri">
+                                <input type="hidden" name="loc" value="en_US">
+                                <p><input type="submit" value="Subscribe" class="thbg-color"></p>
+                            </form>
+                        </div></p>
+                    </div><div class="clear"></div>
+                </div>
+            </div><div class="clear"></div>
+        </div>
+    </div>
+</div><!-- content -->
+<div class="clear"></div>
+<!-- content wrapper -->

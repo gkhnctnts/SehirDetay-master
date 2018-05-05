@@ -1,0 +1,24 @@
+﻿@model IEnumerable<SehirDetay.Models.Sehir>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Şehirler</h2>
+
+ 
+
+@foreach (var item in Model)
+{
+
+
+    <div>
+        <a href="/Sehir/@item.Id/@SehirDetay.Helpers.Util.UrlSeo(item.SehirAd)">@Html.DisplayFor(modelItem => item.SehirAd)</a>
+
+      
+    </div>
+
+    
+}
+ 

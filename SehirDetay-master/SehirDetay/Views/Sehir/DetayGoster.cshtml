@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SehirDetay.Models.Icerik>
+
+@{
+    ViewBag.Title = "DetayGoster";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+<div class="container">
+    <div class="simple-column">
+        <div class="kd-modrentitle">
+            <h3>İçerikler</h3>
+            <div class="kd-divider"><div class="short-seprator"><span><i style="color:#000" class="fa fa-globe"></i></span></div></div>
+            <p>....</p>
+        </div>
+    </div><div class="clear"></div><div class="kode-item kode-divider-item" style="margin-bottom: 30px;"><div class="kode-divider"></div></div><div class="col-md-12">
+        <div class="row kode-package-list kode-package" style="margin-bottom: 10px;">
+            <div class="clear"></div>
+
+            @foreach (var item in Model)
+            {
+
+                <article class="col-md-4 columns">
+                    <div class="package-mainsection kode-ux">
+                        <figure>
+                           
+                                @{
+
+                                    if (@item.IcerikMedya.FirstOrDefault() != null)
+                                    {
+                                        var medya = @item.IcerikMedya.FirstOrDefault();
+
+                                        <img width="360" height="300" src="/Content/@medya.Medya.MedyaTipi/@medya.Medya.MedyaUrl" class="attachment-small-grid-size wp-post-image" alt="5" />
+                                    }
+                                }
+                                
+
+
+                               
+                           
+                            <figcaption>
+                                <span class="package-price thbg-color"><a href="/Kategori/@item.KategoriId/@SehirDetay.Helpers.Util.UrlSeo(item.Kategori.KategoriAd)">@item.Kategori.KategoriAd </a></span>
+                                <div class="kd-bottomelement">
+                                    <h5><a href="/Detay/@item.Id/@SehirDetay.Helpers.Util.UrlSeo(item.Baslik)">@item.Baslik</a></h5>
+                                    <div style="background-color: #00c4d6;" class="days-counter"><span>11</span><span>Days</span></div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </article>
+
+                                    }
+        </div>
+    </div><div class="kode-column col-md-12 columns">
+        <div class="simple-column" style="margin-bottom: 0PX;">
+            <p style="text-align: center;">
+                <style scoped>
+                    .button-1 {
+                        color: #fffffff;
+                        background: #fade03;
+                    }
+                </style><a class="button-1 custom-btn kd-medium" href="#" target="_self">LOAD MORE</a>
+            </p>
+        </div>
+    </div><div class="clear"></div>
+</div>

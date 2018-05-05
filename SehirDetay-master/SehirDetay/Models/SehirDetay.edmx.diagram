@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8ee7e07234c4467a9e33f9fcc9b7906f" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="SehirDetayModel.Ayar" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SehirDetayModel.Icerik" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SehirDetayModel.Ilce" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SehirDetayModel.Kategori" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SehirDetayModel.Kullanici" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SehirDetayModel.KullaniciRol" Width="1.5" PointX="10.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SehirDetayModel.Rol" Width="1.5" PointX="8.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SehirDetayModel.Sehir" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SehirDetayModel.Ulasim" Width="1.5" PointX="10.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SehirDetayModel.UlasimTur" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SehirDetayModel.Yorum" Width="1.5" PointX="13.5" PointY="8.125" IsExpanded="true" />
+        <AssociationConnector Association="SehirDetayModel.FK_Icerik_Ilce" ManuallyRouted="false" />
+        <AssociationConnector Association="SehirDetayModel.FK_Icerik_Kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="SehirDetayModel.FK_Icerik_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="SehirDetayModel.FK_Icerik_Sehir" ManuallyRouted="false" />
+        <AssociationConnector Association="SehirDetayModel.FK_Ulasim_Icerik" ManuallyRouted="false" />
+        <AssociationConnector Association="SehirDetayModel.FK_Yorum_Icerik" ManuallyRouted="false" />
+        <AssociationConnector Association="SehirDetayModel.FK_Ilce_Sehir" ManuallyRouted="false" />
+        <AssociationConnector Association="SehirDetayModel.FK_Kullanici_Ilce" ManuallyRouted="false" />
+        <AssociationConnector Association="SehirDetayModel.FK_Kullanici_Sehir" ManuallyRouted="false" />
+        <AssociationConnector Association="SehirDetayModel.FK_KullaniciRol_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="SehirDetayModel.FK_Yorum_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="SehirDetayModel.FK_KullaniciRol_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="SehirDetayModel.FK_Ulasim_UlasimTur" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SehirDetayModel.IcerikMedya" Width="1.5" PointX="9.25" PointY="12.875" />
+        <EntityTypeShape EntityType="SehirDetayModel.Medya" Width="1.5" PointX="7" PointY="13.75" />
+        <AssociationConnector Association="SehirDetayModel.FK_IcerikMedya_Icerik" />
+        <AssociationConnector Association="SehirDetayModel.FK_IcerikMedya_Medya" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

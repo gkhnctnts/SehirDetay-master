@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Aktivasyon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row" style="margin-top:20px">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <fieldset>
+                    <h2>Aktivasyon</h2>
+                    <hr class="colorgraph">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg" placeholder="Aktivasyon Kodu" id="aktivasyonkodu" value="@ViewBag.Kod" name="aktivasyonkodu" />
+
+
+
+                    </div>
+
+
+                    @if (ViewBag.HataMesaji != "")
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Hata:</span>
+                            @ViewBag.HataMesaji
+                        </div>
+
+                    }
+
+
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input type="submit" class="btn btn-lg btn-success btn-block" value="Giriş">
+                        </div>
+                    </div>
+
+
+
+                </fieldset>
+            }
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+

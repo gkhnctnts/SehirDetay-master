@@ -1,0 +1,193 @@
+﻿@model SehirDetay.Models.Kullanici
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head
+{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+    <script>
+        $(function () {
+            var sehirler = $("#SehirId");
+            sehirler.on("change", function () {
+                $.get("/KayitOl/Ilceler/" + this.value, function (data) {
+                    //alert(data);
+                    $("#IlceId").html(data);
+                });
+
+            });
+
+            $("#Sifre").blur(sifreKontrol);
+            $("#sifretekrar").blur(sifreKontrol);
+
+            $("#Eposta").blur(function () {
+                $.get("/KayitOl/EpostaKontrol?eposta=" + this.value, function (data) {
+                    var icon = "glyphicon glyphicon-exclamation-sign text-danger";
+
+                    var alt = "Geçersiz Eposta adresi";
+
+                    if (data == 1) {
+                        icon = "glyphicon glyphicon-ban-circle text-danger";
+                        alt = "Bu adres başka bir kullanıcı tarafından kullanıyor.";
+                    }
+                    else if (data == 2) {
+                        icon = "glyphicon glyphicon-ok text-success";
+                        alt = "Bu eposta adresi kullanılabilir.";
+                    }
+
+
+                    $("#imgEposta").attr("class", icon).attr("title", alt);
+
+
+                    
+                     
+                });
+
+            });
+
+
+
+        });
+
+
+        function sifreKontrol() {
+            if( $("#Sifre").val() != "" && $("#sifretekrar").val() !="" &&  $("#Sifre").val() != $("#sifretekrar").val())
+                alert("Girilen şifreler birbirinden farklı");
+        }
+
+
+    </script>
+
+}
+
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="width:400px;margin:0 auto;">
+        <h4>Yeni Kullanici Kayıt Formu</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Eposta, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.Eposta)
+                <span id="imgEposta" class="" aria-hidden="true"></span>
+
+                @Html.ValidationMessageFor(model => model.Eposta, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ad, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.Ad)
+                @Html.ValidationMessageFor(model => model.Ad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Soyad, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.Soyad)
+                @Html.ValidationMessageFor(model => model.Soyad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cinsiyet, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                <div class="checkbox">
+
+
+                    @Html.DropDownListFor(model => model.Cinsiyet, new SelectList(ViewBag.Cinsiyet, "Value", "Text"))
+
+                    @Html.ValidationMessageFor(model => model.Cinsiyet, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogumTarihi, "Doğum Tarihi", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.DogumTarihi)
+                @Html.ValidationMessageFor(model => model.DogumTarihi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CepTelefonu, "Cep Telefonu", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.CepTelefonu)
+                @Html.ValidationMessageFor(model => model.CepTelefonu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sifre, "Şifre", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.PasswordFor(model => model.Sifre)
+                @Html.ValidationMessageFor(model => model.Sifre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label  for="sifretekrar" class="control-label col-md-4">Şifre Tekrarı</label>
+            
+            <div class="col-md-8">
+                <input id="sifretekrar" class="text-box single-line" type="password" />
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SehirId, "İl", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.DropDownListFor(model => model.SehirId, new SelectList(ViewBag.Sehirler, "Id", "SehirAd"))
+
+                @Html.ValidationMessageFor(model => model.SehirId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IlceId, "İlçe", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.DropDownListFor(model => model.IlceId, new SelectList(ViewBag.Ilceler, "Value", "Text"))
+
+
+                @Html.ValidationMessageFor(model => model.IlceId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-8">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
